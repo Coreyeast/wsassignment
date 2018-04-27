@@ -1,8 +1,3 @@
-<%-- 
-    Document   : bookDetails
-    Created on : 27/04/2018, 12:09:12 PM
-    Author     : Pat Plenge
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
