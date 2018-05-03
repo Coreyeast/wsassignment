@@ -6,15 +6,24 @@ and open the template in the editor.
 -->
 <users>
     <user>
-        <email>ryan@ryanheise.com</email>
-        <name>Ryan Heise</name>
-        <password>blahblah</password>
+        <email>pplenge15@hotmail.com</email>
+        <username>Pat</username>
+        <password>123</password>
         
     </user>
     <user>
         <email>joe@bloggs.com</email>
-        <name>Joe Bloggs</name>
+        <username>Joe</username>
         <password>foobar</password>
-        
+    </user>
+    <user>
+        <email>coreyeast@gmail.com</email>
+        <username>Corey</username>
+        <password>lmao</password>
+    </user>
+    <user>
+        <email>patt.stacked@gmail.com</email>
+        <username>Pot</username>
+        <password>321</password>
     </user>
 </users>

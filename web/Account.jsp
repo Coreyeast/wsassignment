@@ -17,42 +17,36 @@
     <%! String name;
         String email;
         String password;
-        String gender;
-        String favouriteColour;
         String tos;
     %>
     <%  name = request.getParameter("name");
         email = request.getParameter("email");
         password = request.getParameter("password");
-        gender = request.getParameter("gender");
-        favouriteColour = request.getParameter("favcol");
         tos = request.getParameter("tos");
     %>
     
    <% String filePath = application.getRealPath("WEB-INF/users.xml");%>
    
-   <jsp:useBean id="diaryApp" class="uts.wsd.DiaryApplication" scope="application">
+   <jsp:useBean id="diaryApp" class="uts.assign.DiaryApplication" scope="application">
     <jsp:setProperty name="diaryApp" property="filePath" value="<%=filePath%>"/>
     </jsp:useBean> 
    
     <%Users users = diaryApp.getUsers();%>
     
         <%if(tos != null) {%>
-        <body bgcolor="<%=favouriteColour%>">
+        <body>
             <%session.getAttribute("user");%>
             <h1> Welcome <%=name%> </h1>
             <p> Your Email is <%=email%>. </p>
             <p> Your password is <%=password%>. </p>
-            <p> Your gender is <%=gender%>. </p>
-            <p> Your favourite colour is <%=favouriteColour%>. </p>
             
-         <%User user = new User(email,name,password,gender,favouriteColour); %> 
+            
+         <%User user = new User(email,name,password); %> 
          <% session.setAttribute("user",user); %>
          
             <%users.addUser(user);%>
             <%diaryApp.updateXML(users, filePath); %>
             <%diaryApp.saveUsers(); %>
-            
             <p> Click <a href='index.jsp'>here</a> to proceed to the main page. </P>
             
         <%}else{%>
