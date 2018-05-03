@@ -8,6 +8,8 @@ public class Book implements Serializable {
     
     @XmlElement(name="title")
     private String title;
+    @XmlElement(name="author")
+    private String author;
     @XmlElement(name="abstract")
     private String absstract;
     @XmlElement(name="pubInfo")
@@ -15,13 +17,20 @@ public class Book implements Serializable {
     @XmlElement(name="condition")
     private String condition;
 
-    public Book(String title, String absstract, String pubInfo, String condition) {
+    public Book(String title, String absstract, String pubInfo, String condition, String author) {
         super();
         this.title = title;
+        this.author = author;
         this.absstract = absstract;
         this.pubInfo = pubInfo;
         this.condition = condition;
     }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    
 
     public String getTitle() {
         return title;
@@ -41,6 +50,10 @@ public class Book implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+    
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public void setAbsstract(String absstract) {

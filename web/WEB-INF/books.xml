@@ -7,15 +7,16 @@ and open the template in the editor.
 <books>
     <book>
         <title>pplenge15@hotmail.com</title>
+        <author></author>
         <abstract>Pat</abstract>
         <pubInfo>123</pubinfo>
         <condition></condition>
     </book>
     <book>
         <title></title>
+        <author></author>
         <abstract></abstract>
         <pubInfo></pubinfo>
         <condition></condition>
     </book>
-    
-</users>
+</books>

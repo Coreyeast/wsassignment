@@ -14,6 +14,7 @@
         <title>JSP Page</title>
     </head>
     <%! String title;
+        String author;
         String absstract;
         String pubInfo;
         String condition;
@@ -22,6 +23,7 @@
     %>
     <%  title = request.getParameter("title");
         absstract = request.getParameter("abstract");
+        author = request.getParameter("author");
         pubInfo = request.getParameter("pubInfo");
         condition = request.getParameter("condition");
         tos = request.getParameter("tos");
@@ -40,14 +42,19 @@
     <body>
         <%if (submitted != null && submitted.equals("yes")) {%>
             <% if (tos != null) { %>
+            <%session.getAttribute("book");%>
                 <h1>Book successfully listed</h1>
+                <p> Title: <%=title%> </p>
                 <p> Click <a href='main.jsp'>here</a> to return to main page. </p>
+                
                 <%Book book = new Book(title,absstract,pubInfo,condition); %> 
-                <% session.setAttribute("book",book); %>
+                <% session.setAttribute("book", book); %>
          
-                <%books.addBook(book);%>
+                <%--<%books.addBook(book);%>
+               
                 <%bookApp.updateXML(books, filePath); %>
                 <%bookApp.saveBooks(); %>
+                --%>
                 
             <%} else {%>
                 <p> Sorry you must agree to the Terms of Service. </p>
@@ -58,8 +65,9 @@
         <form action="Listbooks.jsp" method="post">
             <table>
                 <tr><td> Title </td> <td> <input type="text" name="title"/></td></tr>
+                <tr><td> Author </td> <td> <input type="text" name="author"/></td></tr>
                 <tr><td> Abstract </td> <td> <input type="text" name="abstract"/></td></tr>
-                <tr><td> Publication information (ISBN etc.) </td> <td> <input type="text" name="pubInfo" /></td></tr>  
+                <tr><td> Publication information (ISBN etc.) </td> <td> <input type="text" name="pubInfo"/> </td></tr>  
                 <tr><td> Condition </td> <td> 
                         <select name="condition" >
                             <option value="poor" >Poor</option>
