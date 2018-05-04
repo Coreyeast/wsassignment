@@ -1,17 +1,40 @@
-<%-- 
-    Document   : loginAction
-    Created on : 27/04/2018, 12:25:27 PM
-    Author     : Corey's-PC
---%>
+<%@page import="uts.assign.*"%>
 
+<% String filePath = application.getRealPath("WEB-INF/users.xml"); %>
+<jsp:useBean id="diaryApp" class="uts.assign.DiaryApplication" scope="application">
+    <jsp:setProperty name="diaryApp" property="filePath" value="<%=filePath%>"/>
+</jsp:useBean>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>LoginAction</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+<%
+                String email = request.getParameter("email");
+                
+                
+                if(!email.matches("\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b")){
+                    %>
+                 <p> Password incorrect. :) Click <a href="login.jsp">here</a> to try again.</p>
+                <%} else { %>
+                
+                <%
+                    String password = request.getParameter("password");
+                    Users users = diaryApp.getUsers();
+                    User user = users.login(email, password);                    
+                    %><% 
+
+                    if (user != null) {
+                    session.setAttribute("user", user);
+                    %> 
+                    <hr>Login successful. Click <a href="index.jsp">here</a> to return to the main page.</p>
+                    <% } else { %>
+                    <p> Password incorrect. Click <a href="login.jsp">here</a> to try again.</p> 
+        <%} 
+            }%>
     </body>
 </html>

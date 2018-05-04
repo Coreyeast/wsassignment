@@ -44,7 +44,7 @@
                 int userCount = 0;
                 Users users = diaryApp.getUsers();
                 User user = new User(email,name,password);
-                session.setAttribute("123", user);
+                session.setAttribute("user", user);
                 users.addUser(user);
                 diaryApp.updateXML(users, filePath);
                 diaryApp.saveUsers();
@@ -52,7 +52,7 @@
         <h1>Account created!</h1>
         <br>
         <p>We have successfully created your account with the email < <%=email%> ></p>
-        <p>Click <a href="welcome.jsp">here</a> to return to the main page</p>
+        <p>Click <a href="index.jsp">here</a> to return to the main page</p>
         <% } else { %>
         <h1>Account not created </h1>
         <p>Opps! It looks like you forgot to fill out one of the fields</p>

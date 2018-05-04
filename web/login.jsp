@@ -4,14 +4,45 @@
     Author     : Corey's-PC
 --%>
 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Login</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Login</h1>
+        <form action="loginAction.jsp" method="post">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="Email">Email</label>
+                        </td>
+                        <td>
+                            <input name="email" type="text" value>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="Password">Password</label>
+                        </td>
+                        <td>
+                            <input name="password" type="password" value>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for></label>
+                        </td>
+                        <td>
+                            <input name type="submit" value="Login">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
     </body>
 </html>
