@@ -7,23 +7,23 @@ and open the template in the editor.
 <users>
     <user>
         <email>pplenge15@hotmail.com</email>
-        <username>Pat</username>
+        <name>Pat</name>
         <password>123</password>
         
     </user>
     <user>
         <email>joe@bloggs.com</email>
-        <username>Joe</username>
+        <name>Joe</name>
         <password>foobar</password>
     </user>
     <user>
         <email>coreyeast@gmail.com</email>
-        <username>Corey</username>
+        <name>Corey</name>
         <password>lmao</password>
     </user>
     <user>
         <email>patt.stacked@gmail.com</email>
-        <username>Pot</username>
+        <name>Pot</name>
         <password>321</password>
     </user>
 </users>
