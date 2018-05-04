@@ -4,6 +4,7 @@ import java.io.Serializable;
 import javax.xml.bind.annotation.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
+@XmlRootElement
 public class Book implements Serializable {
     
     @XmlElement(name="title")
@@ -17,7 +18,7 @@ public class Book implements Serializable {
     @XmlElement(name="condition")
     private String condition;
 
-    public Book(String title, String absstract, String pubInfo, String condition, String author) {
+    public Book(String title, String author, String absstract, String pubInfo, String condition ) {
         super();
         this.title = title;
         this.author = author;
@@ -26,16 +27,12 @@ public class Book implements Serializable {
         this.condition = condition;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    
-
     public String getTitle() {
         return title;
     }
-
+    public String getAuthor() {
+        return author;
+    }
     public String getAbsstract() {
         return absstract;
     }

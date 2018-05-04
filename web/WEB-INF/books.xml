@@ -9,14 +9,14 @@ and open the template in the editor.
         <title>pplenge15@hotmail.com</title>
         <author></author>
         <abstract>Pat</abstract>
-        <pubInfo>123</pubinfo>
+        <pubInfo>123</pubInfo>
         <condition></condition>
     </book>
     <book>
         <title></title>
         <author></author>
         <abstract></abstract>
-        <pubInfo></pubinfo>
+        <pubInfo></pubInfo>
         <condition></condition>
     </book>
 </books>
