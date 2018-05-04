@@ -43,6 +43,7 @@
         <%if (submitted != null && submitted.equals("yes")) {%>
             <% if (tos != null) { %>
             <%session.getAttribute("book");%>
+            
                 <h1>Book successfully listed</h1>
                 <p> Title: <%=title%> </p>
                 <p> Click <a href='index.jsp'>here</a> to return to main page. </p>
@@ -63,11 +64,11 @@
         <h1>List a book</h1>
         <form action="Listbooks.jsp" method="post">
             <table>
-                <tr><td> Title </td> <td> <input type="text" name="title"/></td></tr>
-                <tr><td> Author </td> <td> <input type="text" name="author"/></td></tr>
-                <tr><td> Abstract </td> <td> <input type="text" name="abstract"/></td></tr>
-                <tr><td> Publication information (ISBN etc.) </td> <td> <input type="text" name="pubInfo"/> </td></tr>  
-                <tr><td> Condition </td> <td> 
+                <tr><td> Title: </td> <td> <input type="text" name="title"/></td></tr>
+                <tr><td> Author: </td> <td> <input type="text" name="author"/></td></tr>
+                <tr><td> Abstract: </td> <td> <input type="text" name="abstract"/></td></tr>
+                <tr><td> Publication information (ISBN etc.): </td> <td> <input type="text" name="pubInfo"/> </td></tr>  
+                <tr><td> Condition: </td> <td> 
                         <select name="condition" >
                             <option value="poor" >Poor</option>
                             <option value="fair">Fair</option>

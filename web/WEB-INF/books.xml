@@ -6,17 +6,21 @@ and open the template in the editor.
 -->
 <books>
     <book>
-        <title>pplenge15@hotmail.com</title>
-        <author></author>
-        <abstract>Pat</abstract>
-        <pubInfo>123</pubInfo>
-        <condition></condition>
+        <title>Gone</title>
+        <details>
+            <author>Micheal grant</author>
+            <abstract>Kids</abstract>
+            <pubInfo>21313</pubInfo>
+            <condition>Poor</condition>
+        </details>
     </book>
     <book>
-        <title></title>
-        <author></author>
-        <abstract></abstract>
-        <pubInfo></pubInfo>
-        <condition></condition>
+       <title>Slut</title>
+        <details>
+            <author>Patick</author>
+            <abstract>stuff</abstract>
+            <pubInfo>123</pubInfo>
+            <condition>Great</condition>
+        </details>
     </book>
 </books>
