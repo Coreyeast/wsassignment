@@ -45,16 +45,15 @@
             <%session.getAttribute("book");%>
                 <h1>Book successfully listed</h1>
                 <p> Title: <%=title%> </p>
-                <p> Click <a href='main.jsp'>here</a> to return to main page. </p>
+                <p> Click <a href='index.jsp'>here</a> to return to main page. </p>
                 
-                <%Book book = new Book(title,absstract,pubInfo,condition); %> 
+                <%Book book = new Book(title,author, absstract, pubInfo, condition); %> 
                 <% session.setAttribute("book", book); %>
          
-                <%--<%books.addBook(book);%>
-               
+                <%books.addBook(book);%>      
                 <%bookApp.updateXML(books, filePath); %>
                 <%bookApp.saveBooks(); %>
-                --%>
+                
                 
             <%} else {%>
                 <p> Sorry you must agree to the Terms of Service. </p>
