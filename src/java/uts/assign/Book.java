@@ -17,14 +17,25 @@ public class Book implements Serializable {
     private String pubInfo;
     @XmlElement(name="condition")
     private String condition;
+    @XmlElement(name="lister")
+    private String lister;
 
-    public Book(String title, String author, String absstract, String pubInfo, String condition ) {
+    public Book(String title, String author, String absstract, String pubInfo, String condition, String lister ) {
         super();
         this.title = title;
         this.author = author;
         this.absstract = absstract;
         this.pubInfo = pubInfo;
         this.condition = condition;
+        this.lister = lister;
+    }
+
+    public String getLister() {
+        return lister;
+    }
+
+    public void setLister(String lister) {
+        this.lister = lister;
     }
 
     public String getTitle() {
