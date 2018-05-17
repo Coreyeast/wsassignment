@@ -8,8 +8,7 @@ and open the template in the editor.
     <user>
         <email>pplenge15@hotmail.com</email>
         <name>Pat</name>
-        <password>123</password>
-        
+        <password>123</password>  
     </user>
     <user>
         <email>joe@bloggs.com</email>

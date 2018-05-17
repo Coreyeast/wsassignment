@@ -3,20 +3,19 @@
 <books xmlns="https://www.w3schools.com"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
+<?xml-stylesheet type="text/xsl" href="books.xsl"?>
 
 <books>
     <book>
         <title>Gone</title>
-        
             <author>Micheal grant</author>
             <abstract>Kids</abstract>
             <pubInfo>21313</pubInfo>
             <condition>Poor</condition>
             <lister>joe@bloggs.com</lister>
-        
     </book>
     <book>
-       <title>Title of book</title>
+        <title>Title of book</title>
             <author>Author</author>
             <abstract>Abstract</abstract>
             <pubInfo>123</pubInfo>
