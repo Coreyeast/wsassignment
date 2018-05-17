@@ -19,6 +19,7 @@
         String pubInfo;
         String condition;
         String submitted;
+        String lister;
         String tos;
     %>
     <%  title = request.getParameter("title");
@@ -28,6 +29,7 @@
         condition = request.getParameter("condition");
         tos = request.getParameter("tos");
         submitted = request.getParameter("submitted");
+        lister = request.getParameter("lister");
 
     %>
  
@@ -48,7 +50,7 @@
                 <p> Title: <%=title%> </p>
                 <p> Click <a href='index.jsp'>here</a> to return to main page. </p>
                 
-                <%Book book = new Book(title,author, absstract, pubInfo, condition); %> 
+                <%Book book = new Book(title,author, absstract, pubInfo, condition, lister); %> 
                 <% session.setAttribute("book", book); %>
          
                 <%books.addBook(book);%>      
@@ -68,6 +70,7 @@
                 <tr><td> Author: </td> <td> <input type="text" name="author"/></td></tr>
                 <tr><td> Abstract: </td> <td> <input type="text" name="abstract"/></td></tr>
                 <tr><td> Publication information (ISBN etc.): </td> <td> <input type="text" name="pubInfo"/> </td></tr>  
+                <tr><td> Lister: </td> <td> <input type="text" name="lister"/> </td></tr>  
                 <tr><td> Condition: </td> <td> 
                         <select name="condition" >
                             <option value="poor" >Poor</option>

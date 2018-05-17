@@ -12,6 +12,7 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
             <abstract>Kids</abstract>
             <pubInfo>21313</pubInfo>
             <condition>Poor</condition>
+            <lister>joe@bloggs.com</lister>
         </details>
     </book>
     <book>
@@ -21,6 +22,7 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
             <abstract>Abstract</abstract>
             <pubInfo>123</pubInfo>
             <condition>condition</condition>
+            <lister>joe@bloggs.com</lister>
         </details>
     </book>
 </books>

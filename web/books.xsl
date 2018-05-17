@@ -62,4 +62,13 @@
             <xsl:apply-templates/>
         </p>
     </xsl:template>
+    
+    
+    <xsl:template match="lister">
+        <h3> <u> Condition </u> </h3>
+        <p>
+            <xsl:apply-templates/>
+        </p>
+    </xsl:template>
+    
 </xsl:stylesheet>
