@@ -15,12 +15,12 @@ and open the template in the editor.
         </details>
     </book>
     <book>
-       <title>Slut</title>
+       <title>Title of book</title>
         <details>
-            <author>Patick</author>
-            <abstract>stuff</abstract>
-            <pubInfo>123</pubInfo>
-            <condition>Great</condition>
+            <author>Author</author>
+            <abstract>Abstract</abstract>
+            <pubInfo>pubinfo</pubInfo>
+            <condition>condition</condition>
         </details>
     </book>
 </books>

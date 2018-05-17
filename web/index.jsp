@@ -22,7 +22,7 @@
         <div style="text-align: right;"><a href="logout.jsp">Logout</a></div>
         <ul>
             <li>
-                <a href="editUser.jsp">My Account</a>
+                <a href="Listbooks.jsp">List A book</a>
             </li>
         </ul>
         <% } else { %>
