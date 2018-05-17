@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<books xmlns="https://www.w3schools.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
+
 <books>
     <book>
         <title>Gone</title>
@@ -19,7 +19,7 @@ and open the template in the editor.
         <details>
             <author>Author</author>
             <abstract>Abstract</abstract>
-            <pubInfo>pubinfo</pubInfo>
+            <pubInfo>123</pubInfo>
             <condition>condition</condition>
         </details>
     </book>
