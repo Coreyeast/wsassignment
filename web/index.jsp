@@ -52,6 +52,28 @@
             You are not logged in
         </div>
         <div style="text-align: right;"><a href="login.jsp">Login</a> | <a href="register.jsp">Register</a></div>
+         <%
+
+            String xml ="WEB-INF/books.xml"; // location of the XML file
+
+            String xsl = "books.xsl"; // location of the XSL file
+
+        %>
+
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+        <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+
+        <c:set var="xml" value="<%=xml%>"/>
+
+        <c:set var="xsl" value="<%=xsl%>"/>
+
+        <c:import url="${xml}" var="xmldocument"/>
+
+        <c:import url="${xsl}" var="xslt"/>
+
+        <x:transform xml="${xmldocument}" xslt="${xslt}"/>
         <% }%>
+        
     </body>
 </html>
