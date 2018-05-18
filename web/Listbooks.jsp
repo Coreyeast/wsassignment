@@ -29,7 +29,7 @@
         condition = request.getParameter("condition");
         tos = request.getParameter("tos");
         submitted = request.getParameter("submitted");
-        lister = request.getParameter("lister");
+        lister = request.getParameter("email");
 
     %>
  
@@ -58,6 +58,7 @@
                 <%bookApp.saveBooks(); %> 
                 
                 
+                
             <%} else {%>
                 <p> Sorry you must agree to the Terms of Service. </p>
                 <p> Click <a href='Listbooks.jsp'>here</a> to go back. </P>
@@ -69,8 +70,7 @@
                 <tr><td> Title: </td> <td> <input type="text" name="title"/></td></tr>
                 <tr><td> Author: </td> <td> <input type="text" name="author"/></td></tr>
                 <tr><td> Abstract: </td> <td> <input type="text" name="abstract"/></td></tr>
-                <tr><td> Publication information (ISBN etc.): </td> <td> <input type="text" name="pubInfo"/> </td></tr>  
-                <tr><td> Lister: </td> <td> <input type="text" name="lister"/> </td></tr>  
+                <tr><td> Publication information (ISBN etc.): </td> <td> <input type="text" name="pubInfo"/> </td></tr>    
                 <tr><td> Condition: </td> <td> 
                         <select name="condition" >
                             <option value="poor" >Poor</option>

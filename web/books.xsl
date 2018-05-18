@@ -65,7 +65,7 @@
     
     
     <xsl:template match="lister">
-        <h3> <u> Condition </u> </h3>
+        <h3> <u> Lister </u> </h3>
         <p>
             <xsl:apply-templates/>
         </p>
