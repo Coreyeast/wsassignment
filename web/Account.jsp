@@ -4,8 +4,8 @@
     Author     : 12578720
 --%>
 
-<%@page import="uts.wsd.Users"%>
-<%@page import="uts.wsd.User"%>
+<%@page import="uts.assign.Users"%>
+<%@page import="uts.assign.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
