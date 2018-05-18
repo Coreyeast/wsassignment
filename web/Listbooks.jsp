@@ -4,6 +4,8 @@
     Author     : 12578720
 --%>
 
+<%@page import="uts.assign.User"%>
+<%@page import="uts.assign.Users"%>
 <%@page import="uts.assign.Books"%>
 <%@page import="uts.assign.Book"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -29,7 +31,8 @@
         condition = request.getParameter("condition");
         tos = request.getParameter("tos");
         submitted = request.getParameter("submitted");
-        lister = request.getParameter("email");
+        User user = (User) session.getAttribute("user");
+        lister = user.getEmail();
 
     %>
  
@@ -38,7 +41,7 @@
    <jsp:useBean id="bookApp" class="uts.assign.BookApplication" scope="application">
     <jsp:setProperty name="bookApp" property="filePath" value="<%=filePath%>"/>
     </jsp:useBean> 
-   
+
     <%Books books = bookApp.getBooks();%>
         
     <body>

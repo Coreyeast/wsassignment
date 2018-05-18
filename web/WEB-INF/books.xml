@@ -20,6 +20,6 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
             <abstract>Abstract</abstract>
             <pubInfo>123</pubInfo>
             <condition>condition</condition>
-            <lister>joe@bloggs.com</lister>
+            <lister>patt.stacked@gmail.com</lister>
     </book>
 </books>
