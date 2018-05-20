@@ -28,4 +28,37 @@ public class Books implements Serializable {
     public void removeBook(Book book) {
         list.remove(book);
     }
+    
+    public ArrayList<Book> getBookLister(String lister) {
+        ArrayList<Book> listedBooks = new ArrayList<Book>();
+        for (Book book : list) {
+            if (book.getLister().equalsIgnoreCase(lister)){
+                listedBooks.add(book);
+            }
+        }
+        return listedBooks;
+    }
+
+    public ArrayList<Book> getBookCondition(String condition) {
+        ArrayList<Book> conditionBooks = new ArrayList<Book>();
+        for (Book book : list) {
+            if (book.getCondition().equalsIgnoreCase(condition)){
+                conditionBooks.add(book);
+            }
+        }
+        return conditionBooks;
+    }
+/**  FYI we haven't added the status feature yet
+
+    public ArrayList<Book> getBookStatus(String status) {
+        ArrayList<Book> statusBooks = new ArrayList<Book>();
+        for (Book book : list) {
+            if (book.getStatus().equalsIgnoreCase(status)){
+                statusBooks.add(book);
+            }
+        }
+        return statusBooks;
+    }
+**/
+
 }

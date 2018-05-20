@@ -22,4 +22,12 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
             <condition>condition</condition>
             <lister>patt.stacked@gmail.com</lister>
     </book>
+    <book>
+        <title>Title</title>
+            <author>Autuytjhor</author>
+            <abstract>Abyjrtstract</abstract>
+            <pubInfo>12yjrtj3</pubInfo>
+            <condition>poor</condition>
+            <lister>patt.stacked@gmail.com</lister>
+    </book>
 </books>
