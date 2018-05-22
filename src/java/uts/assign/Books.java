@@ -52,6 +52,15 @@ public class Books implements Serializable {
         return null;
     }
 
+    public Book getID(int id) {
+        for (Book book : list) {
+            if (book.getId() == id){
+                return book;
+            }
+        }
+        return null;
+    }
+
     public ArrayList<Book> getBookCondition(String condition) {
         ArrayList<Book> conditionBooks = new ArrayList<Book>();
         for (Book book : list) {

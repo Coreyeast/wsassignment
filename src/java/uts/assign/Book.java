@@ -21,8 +21,10 @@ public class Book implements Serializable {
     private String condition;
     @XmlElement(name="lister")
     private String lister;
+    @XmlElement(name="status")
+    private String status;
 
-    public Book(int id, String title, String author, String absstract, String pubInfo, String condition, String lister ) {
+    public Book(int id, String title, String author, String absstract, String pubInfo, String condition, String lister) {
         super();
         this.id = id;
         this.title = title;
@@ -31,6 +33,7 @@ public class Book implements Serializable {
         this.pubInfo = pubInfo;
         this.condition = condition;
         this.lister = lister;
+        this.status = "available";
     }
 
     public int getId() {
@@ -53,6 +56,14 @@ public class Book implements Serializable {
     }
     public String getAbsstract() {
         return absstract;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getPubInfo() {

@@ -46,8 +46,8 @@ public class BookSOAP {
     }
     
     @WebMethod
-    public void deleteBook(String name) throws JAXBException, IOException, Exception {
-        Book book = fetchBooks().getBookName(name);
+    public void deleteBook(int id) throws JAXBException, IOException, Exception {
+        Book book = fetchBooks().getID(id);
         fetchBooks().removeBook(book);
     }
     
