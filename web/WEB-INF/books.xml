@@ -7,27 +7,30 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
 
 <books>
     <book>
+        <id>0</id>
         <title>Gone</title>
-            <author>Micheal grant</author>
-            <abstract>Kids</abstract>
-            <pubInfo>21313</pubInfo>
-            <condition>Poor</condition>
-            <lister>joe@bloggs.com</lister>
+        <author>Micheal grant</author>
+        <abstract>Kids</abstract>
+        <pubInfo>21313</pubInfo>
+        <condition>Poor</condition>
+        <lister>joe@bloggs.com</lister>
     </book>
     <book>
+        <id>1</id>
         <title>Title of book</title>
-            <author>Author</author>
-            <abstract>Abstract</abstract>
-            <pubInfo>123</pubInfo>
-            <condition>condition</condition>
-            <lister>patt.stacked@gmail.com</lister>
+        <author>Author</author>
+        <abstract>Abstract</abstract>
+        <pubInfo>123</pubInfo>
+        <condition>new</condition>
+        <lister>patt.stacked@gmail.com</lister>
     </book>
     <book>
+        <id>0</id>
         <title>Title</title>
-            <author>Autuytjhor</author>
-            <abstract>Abyjrtstract</abstract>
-            <pubInfo>12yjrtj3</pubInfo>
-            <condition>poor</condition>
-            <lister>patt.stacked@gmail.com</lister>
+        <author>Autuytjhor</author>
+        <abstract>Abyjrtstract</abstract>
+        <pubInfo>12yjrtj3</pubInfo>
+        <condition>poor</condition>
+        <lister>patt.stacked@gmail.com</lister>
     </book>
 </books>

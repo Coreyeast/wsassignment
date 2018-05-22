@@ -1,8 +1,8 @@
-/*
+/**
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
+ **/
 package uts.assign.rest;
  
 import javax.servlet.ServletContext;
@@ -38,8 +38,7 @@ public class DiaryService {
   }
  }
  
- /** YOUR METHODS WILL BE INSERTED HERE **/
-// return getDiaryApp.getUser.getUserEmail(email)
+ //YOUR METHODS WILL BE INSERTED HERE 
 
 @GET
 @Path("users")

@@ -7,6 +7,8 @@ import javax.xml.bind.annotation.*;
 @XmlRootElement
 public class Book implements Serializable {
     
+    @XmlElement(name="id")
+    private int id;
     @XmlElement(name="title")
     private String title;
     @XmlElement(name="author")
@@ -20,14 +22,19 @@ public class Book implements Serializable {
     @XmlElement(name="lister")
     private String lister;
 
-    public Book(String title, String author, String absstract, String pubInfo, String condition, String lister ) {
+    public Book(int id, String title, String author, String absstract, String pubInfo, String condition, String lister ) {
         super();
+        this.id = id;
         this.title = title;
         this.author = author;
         this.absstract = absstract;
         this.pubInfo = pubInfo;
         this.condition = condition;
         this.lister = lister;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getLister() {

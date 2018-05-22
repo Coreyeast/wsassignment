@@ -29,6 +29,10 @@ public class Books implements Serializable {
         list.remove(book);
     }
     
+    public int createID() { //U_ID java lib
+     return list.size() + 1;
+    }
+    
     public ArrayList<Book> getBookLister(String lister) {
         ArrayList<Book> listedBooks = new ArrayList<Book>();
         for (Book book : list) {
@@ -37,6 +41,15 @@ public class Books implements Serializable {
             }
         }
         return listedBooks;
+    }
+    
+    public Book getBookName(String name) {
+        for (Book book : list) {
+            if (book.getTitle().equalsIgnoreCase(name)){
+                return book;
+            }
+        }
+        return null;
     }
 
     public ArrayList<Book> getBookCondition(String condition) {
@@ -48,6 +61,8 @@ public class Books implements Serializable {
         }
         return conditionBooks;
     }
+
+   
 /**  FYI we haven't added the status feature yet
 
     public ArrayList<Book> getBookStatus(String status) {

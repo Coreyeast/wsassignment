@@ -53,9 +53,9 @@
                 <p> Title: <%=title%> </p>
                 <p> Click <a href='index.jsp'>here</a> to return to main page. </p>
                 
-                <%Book book = new Book(title,author, absstract, pubInfo, condition, lister); %> 
+                <%Book book = new Book(books.createID(), title, author, absstract, pubInfo, condition, lister); %> 
                 <% session.setAttribute("book", book); %>
-         
+                
                 <%books.addBook(book);%>      
                 <%bookApp.updateXML(books, filePath); %>
                 <%bookApp.saveBooks(); %> 
