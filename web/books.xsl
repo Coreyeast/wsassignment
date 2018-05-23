@@ -19,56 +19,42 @@
                 </style>
             </head>
             <table border="1">
-                <xsl:apply-templates/>
+                <thead>
+                <tr>
+                    <td>ID </td>
+                    <td>Title </td>
+                    <td>Author </td>
+                    <td>Abstract </td>
+                    <td>Pubinfo </td>
+                    <td>Condition </td>
+                    <td>Lister </td>
+                    <td> Status </td>
+                </tr> 
+                </thead>
+                <tbody>
+                    <xsl:apply-templates/>
+                </tbody>
             </table>
         </html>
     </xsl:template>
     
-    <xsl:template match="book">
-        <th><xsl:apply-templates/></th>
+     <xsl:template match="book">
+        <tr>
+            <xsl:apply-templates/>
+        </tr>
+    </xsl:template>
+    
+    <xsl:template match="book/*">
+        <td>
+            <xsl:apply-templates/>
+        </td>
+    </xsl:template>
+    
+    <xsl:template match="book/status">
+        <td>
+        <a href='http://localhost:8080/wsassignment/bookDetails.jsp?/id={../id}'>Reserve</a>
+        </td>
+        <xsl:apply-templates/>
     </xsl:template>
    
-    <xsl:template match="books/book/title">
-        <h1>
-            <xsl:apply-templates/>
-        </h1>
-    </xsl:template>
-   
-    
-    <xsl:template match="author">
-        <h3> <u> Author </u> </h3>
-        <p>
-            <xsl:apply-templates/>
-        </p>
-    </xsl:template>
-    
-    <xsl:template match="abstract">
-        <h3> <u> Abstract </u> </h3>
-        <p>
-            <xsl:apply-templates/>
-        </p>
-    </xsl:template>
-    
-    <xsl:template match="pubInfo">
-        <h3> <u> Public Information </u> </h3>
-        <p>
-            <xsl:apply-templates/>
-        </p>
-    </xsl:template>
-    
-    <xsl:template match="condition">
-        <h3> <u> Condition </u> </h3>
-        <p>
-            <xsl:apply-templates/>
-        </p>
-    </xsl:template>
-    
-    
-    <xsl:template match="lister">
-        <h3> <u> Lister </u> </h3>
-        <p>
-            <xsl:apply-templates/>
-        </p>
-    </xsl:template>
-    
 </xsl:stylesheet>
