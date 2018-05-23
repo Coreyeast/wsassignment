@@ -15,6 +15,9 @@
     <body>
         <h1>Book Site</h1>
         <%User user = (User) session.getAttribute("user");%>
+        
+       <%-- //IF THE USER IS LOGGED IN --%>
+        
         <% if (user != null) {%>
         <div style="background: #eee; border: solid 1px #333; text-align: right; width: 100%;">
             You are logged in as <%=user.getName()%> < <%=user.getEmail()%> > 
@@ -25,6 +28,9 @@
                 <a href="Listbooks.jsp">List A book</a>
             </li>
         </ul>
+        
+        
+       <%-- //THIS IS WHAT ALLOWS THE XSL TRANSFORM --%>
         <%
 
             String xml ="WEB-INF/books.xml"; // location of the XML file
@@ -48,10 +54,18 @@
         <x:transform xml="${xmldocument}" xslt="${xslt}"/>
         
         <% } else { %>
+        
+        
+        
+        <%-- //WHEN THE PERSON IS NOT A LISTER (NOT LOGGED IN)--%>
+        
         <div style="background: #eee; border: solid 1px #333; text-align: right; width: 100%;">
             You are not logged in
         </div>
         <div style="text-align: right;"><a href="login.jsp">Login</a> | <a href="register.jsp">Register</a></div>
+        
+        
+        <%-- //THIS IS WHAT ALLOWS THE XSL TRANSFORM --%>
          <%
 
             String xml ="WEB-INF/books.xml"; // location of the XML file

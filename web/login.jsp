@@ -38,7 +38,7 @@
                             <label for></label>
                         </td>
                         <td>
-                            <input name type="submit" value="Login">
+                            <input name="" type="submit" value="Login">
                         </td>
                     </tr>
                 </tbody>
