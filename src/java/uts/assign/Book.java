@@ -40,6 +40,7 @@ public class Book implements Serializable {
         return id;
     }
 
+    
     public String getLister() {
         return lister;
     }

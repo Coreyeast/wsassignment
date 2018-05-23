@@ -1,9 +1,11 @@
 
+<%@page import="uts.assign.Book"%>
 <%@page import="uts.assign.Books"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
-    <head>
+    
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -18,11 +20,28 @@
          
          <%Books books = bookApp.getBooks();%>
          
-         <%String id;
-         id = request.getParameter("id");
-         %>
+         <%!
+             String title;
+             String author;
+             String abstractt;
+             String pubInfo;
+             String condition;
+             String status;
+             %>
+
+       <%
+         String id = request.getParameter("id"); //Gives me 1
+        
+         int ids = Integer.parseInt(id); //id's now = 1
          
-         <h1><%=id%></h1>
-         
-    </body>
+        Book answer = books.getID(ids);
+        
+        title = answer.getTitle();
+        author = answer.getAuthor();
+        abstractt = answer.getAbsstract();
+        pubInfo = answer.getPubInfo();
+           %>
+           
+<%=title%>
+</body>
 </html>

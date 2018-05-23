@@ -60,7 +60,8 @@ public class Books implements Serializable {
         }
         return null;
     }
-
+    
+    
     public ArrayList<Book> getBookCondition(String condition) {
         ArrayList<Book> conditionBooks = new ArrayList<Book>();
         for (Book book : list) {
