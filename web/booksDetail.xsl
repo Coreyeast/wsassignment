@@ -52,7 +52,10 @@
     
     <xsl:template match="book/status">
         <td>
-            <a href='http://localhost:8080/wsassignment/bookDetails.jsp?id={../id}'>Reserve</a>
+            <form action="http://localhost:8080/wsassignment/bookDetails.jsp?id={../id}" method='post'>
+                <input type='submit' value='reserve'/>
+                <!--<<a href='http://localhost:8080/wsassignment/bookDetails.jsp?id={../id}'>Reserve</a> -->
+            </form>
         </td>
         <xsl:apply-templates/>
     </xsl:template>
