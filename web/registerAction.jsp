@@ -57,6 +57,6 @@
         <h1>Account not created </h1>
         <p>Opps! It looks like you forgot to fill out one of the fields</p>
         <p>Click <a href="register.jsp">here</a> to try again</p>
-        <% } %>
+        <% } %> v
     </body>
 </html>

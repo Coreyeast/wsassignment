@@ -11,7 +11,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output method="html"/>
     
-    <xsl:template match="books">
+    <xsl:template match="reservations">
         <html>
             <head>
                 <style>
@@ -21,14 +21,10 @@
             <table border="1">
                 <thead>
                 <tr>
-                    <td>ID </td>
+                    <td>Email </td>
+                    <td>Name </td>
                     <td>Title </td>
-                    <td>Author </td>
-                    <td>Abstract </td>
-                    <td>Pubinfo </td>
-                    <td>Condition </td>
-                    <td>Lister </td>
-                    <td> Status </td>
+                    <td>ID</td>
                 </tr> 
                 </thead>
                 <tbody>
@@ -38,26 +34,16 @@
         </html>
     </xsl:template>
     
-     <xsl:template match="book">
+     <xsl:template match="reservation">
         <tr>
             <xsl:apply-templates/>
         </tr>
     </xsl:template>
     
-    <xsl:template match="book/*">
+    <xsl:template match="reservation/*">
         <td>
             <xsl:apply-templates/>
         </td>
-    </xsl:template>
-    
-    <xsl:template match="book/status">
-        <td>
-            <form action="http://localhost:8080/wsassignment/bookDetails.jsp?id={../id}" method='post'>
-                <input type='submit' value='reserve'/>
-                <!--<<a href='http://localhost:8080/wsassignment/bookDetails.jsp?id={../id}'>Reserve</a> -->
-            </form>
-        </td>
-        <xsl:apply-templates/>
     </xsl:template>
    
 </xsl:stylesheet>
