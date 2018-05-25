@@ -27,8 +27,8 @@
         %>
         
         <%  status = request.getParameter("status");
-            if(status.matches("unavaliable")) {
-               session.setAttribute(status, "avaliable");
+            if(status.matches("unavailable")) {
+               session.setAttribute(status, "available");
                 Books books = bookApp.getBooks();
                 String id = request.getParameter("id"); //Gives me the num
                 int ids = Integer.parseInt(id);

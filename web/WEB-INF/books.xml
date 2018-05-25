@@ -14,7 +14,7 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
         <pubInfo>21313</pubInfo>
         <condition>Poor</condition>
         <lister>patt.stacked@gmail.com</lister>
-        <status>Available</status>
+        <status>available</status>
     </book>
     <book>
         <id>1</id>
@@ -24,7 +24,7 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
         <pubInfo>123</pubInfo>
         <condition>new</condition>
         <lister>patt.stacked@gmail.com</lister>
-        <status>Available</status>
+        <status>available</status>
     </book>
     <book>
         <id>2</id>
@@ -34,7 +34,7 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
         <pubInfo>12yjrtj3</pubInfo>
         <condition>poor</condition>
         <lister>patt.stacked@gmail.com</lister>
-        <status>Available</status>
+        <status>available</status>
     </book>
     <book>
         <id>3</id>
@@ -44,6 +44,6 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
         <pubInfo>12yfdsfdwfdjrtj3</pubInfo>
         <condition>poor</condition>
         <lister>joe@bloggs.com</lister>
-        <status>Available</status>
+        <status>available</status>
     </book>
 </books>

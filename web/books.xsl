@@ -41,6 +41,16 @@
     <xsl:template match="book">
         <tr>
             <xsl:apply-templates/>
+            <td>
+                <xsl:choose>
+                    <xsl:when test="status='unavailable'">
+                        <a href='http://localhost:8080/wsassignment/cancelReserve.jsp?id={id}&amp;status={status}'>Cancel Reservation</a>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <a href='http://localhost:8080/wsassignment/bookDetails.jsp?id={id}'>Reserve</a>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </td>
         </tr>
     </xsl:template>
     
@@ -50,12 +60,17 @@
         </td>
     </xsl:template>
     
+    
+    <!--
     <xsl:template match="book/status">
         <td>
             <xsl:apply-templates/> 
             <br></br>
+            <xsl:variable name="something">
+                <xsl:value-of select="../status"/>
+            </xsl:variable>
             <xsl:choose>
-                <xsl:when test="status='unavaliable'">
+                <xsl:when test="{$something} = 'unavailable'">
                     <a href='http://localhost:8080/wsassignment/cancelReserve.jsp?id={../id}&amp;status={../status}'>Cancel Reservation</a>
                 </xsl:when>
                 <xsl:otherwise>
@@ -65,5 +80,7 @@
         </td>
         
     </xsl:template>
+    
+    -->
    
 </xsl:stylesheet>
