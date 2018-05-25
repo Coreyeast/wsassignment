@@ -6,6 +6,8 @@
 package uts.assign.soap;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.Resource;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -38,6 +40,13 @@ public class BookSOAP {
     @WebMethod
     public Books fetchBooks() throws JAXBException, IOException, Exception {
         return getBookApp().getBooks();
+    }
+    
+    @WebMethod
+    public List<Book> fetchArray() throws JAXBException, IOException, Exception {
+        Books books = fetchBooks();
+        List<Book> values = new ArrayList<>(books.getList());
+        return values;
     }
         
     @WebMethod

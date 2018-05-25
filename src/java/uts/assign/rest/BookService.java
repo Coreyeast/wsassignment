@@ -62,7 +62,7 @@ public class BookService {
     @GET
     @Path("books/filter")
     @Produces(MediaType.APPLICATION_XML)
-    public List<Book> getBooks(@QueryParam("condition") String condition, @QueryParam("lister") String lister) throws Exception {
+    public List<Book> getBooks(@QueryParam("condition") String condition, @QueryParam("lister") String lister, @QueryParam("status") String status) throws Exception {
         //List<Book> values = new ArrayList<>();
         Books books = getBooks();
         List<Book> values = new ArrayList<>(books.getList());
@@ -87,6 +87,19 @@ public class BookService {
             for (Iterator<Book> it = values.iterator(); it.hasNext();) {
                 Book book = it.next();
                 if (!book.getLister().equalsIgnoreCase(lister)) {
+                    toRemove.add(book); 
+                }
+            }
+            if (!toRemove.isEmpty()) {
+                values.removeAll(toRemove);
+                toRemove.clear();
+            }
+        }
+        
+        if (status != null) {
+            for (Iterator<Book> it = values.iterator(); it.hasNext();) {
+                Book book = it.next();
+                if (!book.getStatus().equalsIgnoreCase(status)) {
                     toRemove.add(book); 
                 }
             }

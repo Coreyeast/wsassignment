@@ -8,6 +8,7 @@ package uts.assign;
 import java.io.Serializable;
 import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.*;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlRootElement(name="books")
@@ -15,6 +16,7 @@ public class Books implements Serializable {
     
     @XmlElement(name = "book")
     private ArrayList<Book> list = new ArrayList<Book>();
+    private int idGenerator = 2;
     
     public Books() {
         //idk what this does
@@ -30,7 +32,8 @@ public class Books implements Serializable {
     }
     
     public int createID() { //U_ID java lib
-     return list.size() + 1;
+        this.idGenerator = idGenerator + 1;
+        return idGenerator;
     }
     
     public ArrayList<Book> getBookLister(String lister) {
