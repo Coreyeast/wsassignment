@@ -16,24 +16,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <%! String title;
-        String author;
-        String absstract;
-        String pubInfo;
-        String condition;
-        String submitted;
-        String lister;
-        String tos;
-    %>
-    <%  title = request.getParameter("title");
-        absstract = request.getParameter("abstract");
-        author = request.getParameter("author");
-        pubInfo = request.getParameter("pubInfo");
-        condition = request.getParameter("condition");
-        tos = request.getParameter("tos");
-        submitted = request.getParameter("submitted");
+    
+    <%  String title = request.getParameter("title");
+        String absstract = request.getParameter("abstract");
+        String author = request.getParameter("author");
+        String pubInfo = request.getParameter("pubInfo");
+        String condition = request.getParameter("condition");
+        String tos = request.getParameter("tos");
+        String submitted = request.getParameter("submitted");
         User user = (User) session.getAttribute("user");
-        lister = user.getEmail();
+        String lister = user.getEmail();
 
     %>
  
@@ -44,11 +36,14 @@
     </jsp:useBean> 
 
     <%Books books = bookApp.getBooks();%>
-        
+    
     <body>
-
-        <%   if (submitted != null && submitted.equals("yes")) { %>
-        <% if (tos != null) { %>
+        <% if (submitted != null && submitted.equals("yes")) { %>
+        <% if (title.isEmpty() || author.isEmpty() || absstract.isEmpty() || pubInfo.isEmpty()) {%>
+        <p> Please provide all the fields </p>
+        <p> Click <a href='Listbooks.jsp'>here</a> to go back. </P>
+        <% } else{%>
+        <%  if (tos != null) { %>
             <%session.getAttribute("book");%>
             
                 <h1>Book successfully listed</h1>
@@ -67,8 +62,9 @@
             <%} else {%>
                 <p> Please agree to TOS </p>
                 <p> Click <a href='Listbooks.jsp'>here</a> to go back. </P>
-            <%} %>
-        <%} else {%>
+                <%} %>
+                
+        <% } }else { %>
         <h1>List a book</h1>
         <form action="Listbooks.jsp" method="post">
             <table>
@@ -91,6 +87,5 @@
             </table>
         </form>
         <%}%>
-
     </body>
 </html>
