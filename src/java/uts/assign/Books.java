@@ -16,7 +16,7 @@ public class Books implements Serializable {
     
     @XmlElement(name = "book")
     private ArrayList<Book> list = new ArrayList<Book>();
-    private int idGenerator = 2;
+    private int idGenerator = 3;
     
     public Books() {
         //idk what this does

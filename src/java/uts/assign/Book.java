@@ -33,7 +33,7 @@ public class Book implements Serializable {
         this.pubInfo = pubInfo;
         this.condition = condition;
         this.lister = lister;
-        this.status = "available";///
+        this.status = "Available";
     }
 
     public int getId() {
