@@ -8,12 +8,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <%@page import="uts.assign.*"%>
         <% String filePath = application.getRealPath("WEB-INF/reserve.xml"); %>
         <jsp:useBean id="reserveApp" class="uts.assign.ReserveApplication" scope="application">
             <jsp:setProperty name="reserveApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
+        
+        <% String filePath2 = application.getRealPath("WEB-INF/books.xml");%>
+   
+   <jsp:useBean id="bookApp" class="uts.assign.BookApplication" scope="application">
+    <jsp:setProperty name="bookApp" property="filePath" value="<%=filePath2%>"/>
+    </jsp:useBean>
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reserved</title>
@@ -22,42 +27,46 @@
             String name;
             String email;
             String title;
+            String status;
             %>
             
             <%
                 name = request.getParameter("name");
                 email = request.getParameter("email");
                 title = request.getParameter("title");
+                status = request.getParameter("status");
                 //PARSE ID
                 
-              String id = request.getParameter("id"); //Gives me 1
+              String id = request.getParameter("id"); //Gives me the num
                 int ids = Integer.parseInt(id);
                 
                 
             %>
     </head>
     <body> 
+        
+        
         <% 
-            if(email != null) { 
+            if(!email.isEmpty() ) { 
                 Reservations reservations = reserveApp.getReservations();
                 Reservation reservation = new Reservation(email,name,title,ids);
                 session.setAttribute("reservation", reservation);
                 reservations.addReservation(reservation);
                 reserveApp.updateXML(reservations, filePath);
                 reserveApp.saveReservations();
+                
+                Books books = bookApp.getBooks();
+                
+                books.updateStatus(ids, status);
+                bookApp.updateXML(books, filePath2);
+                bookApp.saveBooks();
+                
         %>    
         <h1>Book reserved!</h1>
         <br>
         <p>We have successfully reserved your book and contacted the lister! < <%=email%> ></p>
         <p>Click <a href="index.jsp">here</a> to return to the main page</p>
-        <% } else { %>
-        <h1>Book not reserved </h1>
-        <p>Opps! It looks like you forgot to fill out one of the fields.</p>
-        <p>Click <a href="bookDetail.jsp?id={id}">here</a> to try again</p>
-        <% } %>
-        
-        
-         <%
+          <%
 
             String xml ="WEB-INF/reserve.xml"; // location of the XML file
 
@@ -78,6 +87,15 @@
         <c:import url="${xsl}" var="xslt"/>
 
         <x:transform xml="${xmldocument}" xslt="${xslt}"/>
+        
+        <% } else { %>
+        <h1>Book not reserved </h1>
+        <p>Opps! It looks like you forgot to fill out one of the fields.</p>
+        <p>Click <a href="bookDetails.jsp?id=<%=id%>">here</a> to try again</p>
+        <% } %>
+       
+        
+       
         
     </body>
 </html>

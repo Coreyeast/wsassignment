@@ -20,16 +20,16 @@
             </head>
             <table border="1">
                 <thead>
-                <tr>
-                    <td>ID </td>
-                    <td>Title </td>
-                    <td>Author </td>
-                    <td>Abstract </td>
-                    <td>Pubinfo </td>
-                    <td>Condition </td>
-                    <td>Lister </td>
-                    <td> Status </td>
-                </tr> 
+                    <tr>
+                        <td>ID </td>
+                        <td>Title </td>
+                        <td>Author </td>
+                        <td>Abstract </td>
+                        <td>Pubinfo </td>
+                        <td>Condition </td>
+                        <td>Lister </td>
+                        <td> Status </td>
+                    </tr> 
                 </thead>
                 <tbody>
                     <xsl:apply-templates/>
@@ -38,7 +38,7 @@
         </html>
     </xsl:template>
     
-     <xsl:template match="book">
+    <xsl:template match="book">
         <tr>
             <xsl:apply-templates/>
         </tr>
@@ -52,9 +52,18 @@
     
     <xsl:template match="book/status">
         <td>
-            <a href='http://localhost:8080/wsassignment/bookDetails.jsp?id={../id}'>Reserve</a>
+            <xsl:apply-templates/> 
+            <br></br>
+            <xsl:choose>
+                <xsl:when test="status='unavaliable'">
+                    <a href='http://localhost:8080/wsassignment/cancelReserve.jsp?id={../id}&amp;status={../status}'>Cancel Reservation</a>
+                </xsl:when>
+                <xsl:otherwise>
+                    <a href='http://localhost:8080/wsassignment/bookDetails.jsp?id={../id}'>Reserve</a>
+                </xsl:otherwise>
+            </xsl:choose>
         </td>
-        <xsl:apply-templates/>
+        
     </xsl:template>
    
 </xsl:stylesheet>

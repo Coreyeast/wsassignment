@@ -76,6 +76,7 @@
         Please enter your email: <input type='text' name='email'> 
         <input type="hidden" name="title" value='<%=title%>'/>
         <input type="hidden" name="id" value='<%=id%>'/><br><br>
+        <input type='hidden' name='status' value='unavaliable'/>
         <input type='submit' value='Reserve this book'/>
     </form>
     

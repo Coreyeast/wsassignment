@@ -16,7 +16,7 @@ public class Books implements Serializable {
     
     @XmlElement(name = "book")
     private ArrayList<Book> list = new ArrayList<Book>();
-    private int idGenerator = 3;
+    private int idGenerator = 2;
     
     public Books() {
         //idk what this does
@@ -73,6 +73,15 @@ public class Books implements Serializable {
             }
         }
         return conditionBooks;
+    }
+    
+    public void updateStatus(int id, String status) {
+        for (Book book : list) {
+            if (book.getId() == id) {
+                book.setStatus(status);
+            }
+            
+        }
     }
 
    
