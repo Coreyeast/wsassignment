@@ -67,6 +67,7 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/uts/assign/soap/client"/>
         <delete dir="${build.generated.dir}/jax-wsCache/bookApp"/>
     </target>
+<<<<<<< HEAD
     <target name="wsimport-client-diaryApp" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/diaryApp"/>
         <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/diaryApp" destdir="${build.generated.dir}/jax-wsCache/diaryApp" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/diaryApp/wsdl/localhost_8080/WSAssignment/diaryApp.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSAssignment/diaryApp?wsdl" xnocompile="true" xendorsed="true" package="uts.assign.soap.client">
@@ -116,4 +117,7 @@
         <delete dir="${build.generated.dir}/jax-wsCache/bookApp_2"/>
     </target>
     <target name="wsimport-client-generate" depends="wsimport-client-bookApp, wsimport-client-diaryApp, wsimport-client-bookApp_1, wsimport-client-bookApp_2"/>
+=======
+    <target name="wsimport-client-generate" depends="wsimport-client-bookApp"/>
+>>>>>>> 48ca72f14fbfd024becbc998587d27f680df68ab
 </project>

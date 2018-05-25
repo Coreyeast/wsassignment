@@ -45,8 +45,9 @@
     <%Books books = bookApp.getBooks();%>
         
     <body>
-        <%if (submitted != null && submitted.equals("yes")) {%>
-            <% if (tos != null) { %>
+
+        <%   if (submitted != null && submitted.equals("yes")) { %>
+        <% if (tos != null) { %>
             <%session.getAttribute("book");%>
             
                 <h1>Book successfully listed</h1>
@@ -63,9 +64,9 @@
                 
                 
             <%} else {%>
-                <p> Sorry you must agree to the Terms of Service. </p>
+                <p> Please agree to TOS </p>
                 <p> Click <a href='Listbooks.jsp'>here</a> to go back. </P>
-            <%}%>
+            <%} %>
         <%} else {%>
         <h1>List a book</h1>
         <form action="Listbooks.jsp" method="post">

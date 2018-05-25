@@ -45,6 +45,7 @@
         </wsimport-option>
       </wsimport-options>
     </client>
+<<<<<<< HEAD
     <client name="diaryApp">
       <wsdl-url>http://localhost:8080/WSAssignment/diaryApp?wsdl</wsdl-url>
       <local-wsdl-file>localhost_8080/WSAssignment/diaryApp.wsdl</local-wsdl-file>
@@ -153,5 +154,7 @@
         </wsimport-option>
       </wsimport-options>
     </client>
+=======
+>>>>>>> 48ca72f14fbfd024becbc998587d27f680df68ab
   </clients>
 </jax-ws>
