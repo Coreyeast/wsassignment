@@ -26,6 +26,7 @@
         String submitted = request.getParameter("submitted");
         User user = (User) session.getAttribute("user");
         String lister = user.getEmail();
+        
 
     %>
  
@@ -50,14 +51,27 @@
                 <p> Title: <%=title%> </p>
                 <p> Click <a href='index.jsp'>here</a> to return to main page. </p>
                 
-                <%Book book = new Book(books.createID(), title, author, absstract, pubInfo, condition, lister); %> 
+                 <% int count; 
+                    if (books.getTitles(title) != null) {
+                    count = books.bookCount();
+                    }
+                    else {
+                        count = 1;
+                    }
+                %>
+                 <p> Current counter: <%=count%> </p>
+                 <% session.setAttribute("count", count); %>
+                
+                <%Book book = new Book(books.createID(), title, author, absstract, pubInfo, condition, lister, count); %> 
                 <% session.setAttribute("book", book); %>
                 
                 <%books.addBook(book);%>      
                 <%bookApp.updateXML(books, filePath); %>
                 <%bookApp.saveBooks(); %> 
                 
+               
                 
+               
                 
             <%} else {%>
                 <p> Please agree to TOS </p>

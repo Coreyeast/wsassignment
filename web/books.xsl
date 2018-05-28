@@ -43,7 +43,7 @@
             <xsl:apply-templates/>
             <td>
                 <xsl:choose>
-                    <xsl:when test="status='unavailable'">
+                    <xsl:when test="status='Unavailable'">
                         <a href='http://localhost:8080/wsassignment/cancelReserve.jsp?id={id}&amp;status={status}'>Cancel Reservation</a>
                     </xsl:when>
                     <xsl:otherwise>
