@@ -15,7 +15,7 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
         <condition>Poor</condition>
         <lister>patt.stacked@gmail.com</lister>
         <status>Available</status>
-        <count>1</count>
+        <count>1 </count>
     </book>
     <book>
         <id>1</id>
@@ -26,7 +26,7 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
         <condition>new</condition>
         <lister>patt.stacked@gmail.com</lister>
         <status>Available</status>
-        <count>1</count>
+        <count>1 </count>
     </book>
     <book>
         <id>2</id>
@@ -37,7 +37,7 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
         <condition>poor</condition>
         <lister>patt.stacked@gmail.com</lister>
         <status>Available</status>
-        <count>1</count>
+        <count> 1</count>
     </book>
     <book>
         <id>3</id>
