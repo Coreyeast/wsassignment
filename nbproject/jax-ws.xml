@@ -9,45 +9,8 @@
     </service>
   </services>
   <clients>
-    <client name="bookApp">
-      <wsdl-url>http://localhost:8080/WSAssignment/bookApp?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/WSAssignment/bookApp.wsdl</local-wsdl-file>
-      <package-name forceReplace="true">uts.assign.soap.client</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/WSAssignment/bookApp?wsdl</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>package</wsimport-option-name>
-          <wsimport-option-value>uts.assign.soap.client</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </client>
-<<<<<<< HEAD
     <client name="diaryApp">
-      <wsdl-url>http://localhost:8080/WSAssignment/diaryApp?wsdl</wsdl-url>
+      <wsdl-url>http://localhost:8080/wsassignment/diaryApp?wsdl</wsdl-url>
       <local-wsdl-file>localhost_8080/WSAssignment/diaryApp.wsdl</local-wsdl-file>
       <package-name forceReplace="true">uts.assign.soap.client</package-name>
       <catalog-file>catalog.xml</catalog-file>
@@ -66,7 +29,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/WSAssignment/diaryApp?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/wsassignment/diaryApp?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -82,9 +45,9 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="bookApp_1">
-      <wsdl-url>http://localhost:8080/WSAssignment/bookApp?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/WSAssignment/bookApp.wsdl</local-wsdl-file>
+    <client name="bookApp">
+      <wsdl-url>http://localhost:8080/wsassignment/bookApp?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/wsassignment/bookApp.wsdl</local-wsdl-file>
       <package-name forceReplace="true">uts.assign.soap.client</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
@@ -102,7 +65,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/WSAssignment/bookApp?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/wsassignment/bookApp?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -118,43 +81,5 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="bookApp_2">
-      <wsdl-url>http://localhost:8080/WSAssignment/bookApp?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/WSAssignment/bookApp.wsdl</local-wsdl-file>
-      <package-name forceReplace="true">uts.assign.soap.client</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/WSAssignment/bookApp?wsdl</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>package</wsimport-option-name>
-          <wsimport-option-value>uts.assign.soap.client</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </client>
-=======
->>>>>>> 48ca72f14fbfd024becbc998587d27f680df68ab
   </clients>
 </jax-ws>
