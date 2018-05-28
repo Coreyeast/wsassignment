@@ -24,6 +24,7 @@
         String condition = request.getParameter("condition");
         String tos = request.getParameter("tos");
         String submitted = request.getParameter("submitted");
+        String price = request.getParameter("price");
         User user = (User) session.getAttribute("user");
         String lister = user.getEmail();
         
@@ -40,7 +41,7 @@
     
     <body>
         <% if (submitted != null && submitted.equals("yes")) { %>
-        <% if (title.isEmpty() || author.isEmpty() || absstract.isEmpty() || pubInfo.isEmpty()) {%>
+        <% if (title.isEmpty() || author.isEmpty() || absstract.isEmpty() || pubInfo.isEmpty() || price.isEmpty() ) {%>
         <p> Please provide all the fields </p>
         <p> Click <a href='Listbooks.jsp'>here</a> to go back. </P>
         <% } else{%>
@@ -52,7 +53,7 @@
                 <p> Click <a href='index.jsp'>here</a> to return to main page. </p>
                 
                  <% int count; 
-                    if (books.getTitles(title) != null) {
+                    if (books.getBookName(title) != null) {
                     count = books.bookCount();
                     }
                     else {

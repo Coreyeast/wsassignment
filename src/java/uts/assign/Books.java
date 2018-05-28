@@ -16,6 +16,7 @@ public class Books implements Serializable {
     
     @XmlElement(name = "book")
     private ArrayList<Book> list = new ArrayList<Book>();
+    private ArrayList<String> duplicate = new ArrayList<String>();
     private int idGenerator = 3;
     
     public Books() {
@@ -25,10 +26,25 @@ public class Books implements Serializable {
         return list;
     }       
     public void addBook(Book book) {
+        
+        int amountListed = 0;
+        for (Book listedBooks : list) {
+            if(book.getTitle().equalsIgnoreCase(listedBooks.getTitle())){
+                amountListed =+ 1;
+            }
+        }
+        if (amountListed > 0 && amountListed < 2) {
+            duplicate.add(book.getTitle());
+        }
+        // have to check if there is a book listed in dub already
+        
         list.add(book);
     }
     public void removeBook(Book book) {
         list.remove(book);
+        
+        // would want to remove the book but check if its on the dup list already if its no longer a dup entry then it should be deleted from the list
+        
     }
     
     public int createID() { //U_ID java lib
