@@ -14,28 +14,35 @@
         <title>LoginAction</title>
     </head>
     <body>
-<%
-                String email = request.getParameter("email");
-                
-                
-                if(!email.matches("\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b")){
-                    %>
-                 <p> Password incorrect. :) Click <a href="login.jsp">here</a> to try again.</p>
-                <%} else { %>
-                
-                <%
-                    String password = request.getParameter("password");
-                    Users users = diaryApp.getUsers();
-                    User user = users.login(email, password);                    
-                    %><% 
+        <%
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
 
-                    if (user != null) {
+    try {
+        if (email.isEmpty()) { %>
+        <p> Email not provided. please click <a href="login.jsp">here</a> to go back.</p>
+        <% } else if (!email.matches("\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b")) {
+        %>
+        <p> Email is not in right format. :) Click <a href="login.jsp">here</a> to try again.</p>
+        <%} else if (password.isEmpty()) { %>
+        <p> Password not provided. please click <a href="login.jsp">here</a> to go back.</p>
+        <% } else {
+
+            Users users = diaryApp.getUsers();
+            User user = users.login(email, password);
+        %><%
+                if (user != null) {
                     session.setAttribute("user", user);
-                    %> 
-                    <hr>Login successful. Click <a href="index.jsp">here</a> to return to the main page.</p>
-                    <% } else { %>
-                    <p> Password incorrect. Click <a href="login.jsp">here</a> to try again.</p> 
-        <%} 
-            }%>
+        %> 
+        <hr>Login successful. Click <a href="index.jsp">here</a> to return to the main page.</p>
+        <% } else { %>
+    <p> Its not a registered account. please click <a href="login.jsp">here</a> to sign in with registered account.</p>
+    <% }
+                       }
+                   } catch (NullPointerException ex) {%>
+    <p> You must provide an email address and password in order to login.</p>
+    <% } catch (Exception e) {%>
+    <p> You got an exception : (<%= e.getMessage()%> <% ;%>)</P>
+        <% }%>
     </body>
 </html>

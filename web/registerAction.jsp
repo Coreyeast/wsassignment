@@ -41,7 +41,8 @@
     </head>
     <body>
         <% 
-            if(tos!=null && !email.isEmpty() && !password.isEmpty() && !name.isEmpty()) { 
+            try{
+            if(tos!=null && !email.isEmpty() && !name.isEmpty() && !password.isEmpty()) { 
                 int userCount = 0;
                 Users users = diaryApp.getUsers();
                 User user = new User(email,name,password);
@@ -50,14 +51,32 @@
                 diaryApp.updateXML(users, filePath);
                 diaryApp.saveUsers();
         %>    
+        
+        <% } if(email.isEmpty()){%>
+        <p>Please provide the email!</p>
+        <p>Click <a href="register.jsp">here</a> to try again</p>
+        <% }else if (!email.matches("\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b")){ %>
+        <p>Email is not in right order!</p>
+        <p>Click <a href="register.jsp">here</a> to try again</p>
+        <% }else if (name.isEmpty()){%>
+        <p>Please provide the name!</p>
+        <p>Click <a href="register.jsp">here</a> to try again</p>
+        <% } else if (password.isEmpty()){%>
+        <p>Please provide the password!</p>
+        <p>Click <a href="register.jsp">here</a> to try again</p>
+        <% } else if (tos == null){ %>
+        <h1>Account not created </h1>
+        <p>Please agree the TOS</p>
+        <p>Click <a href="register.jsp">here</a> to try again</p>
+        <%} else { %>
         <h1>Account created!</h1>
         <br>
         <p>We have successfully created your account with the email < <%=email%> ></p>
         <p>Click <a href="index.jsp">here</a> to return to the main page</p>
-        <% } else { %>
-        <h1>Account not created </h1>
-        <p>Opps! It looks like you forgot to fill out one of the fields</p>
-        <p>Click <a href="register.jsp">here</a> to try again</p>
-        <% } %> v
+        <% }  } catch(java.lang.NullPointerException ex){ %>
+        <p>Fields are not filled in.</p>
+        <% } catch (Exception e){ %>
+        <p>Exception is : (<%= e.getMessage() %> <% ; %>)</p>
+        <% System.out.println(e.getMessage());} %>
     </body>
 </html>
