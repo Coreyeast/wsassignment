@@ -37,7 +37,7 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
         <abstract>Wizards fight against Voldemort</abstract>
         <pubInfo>Year: 2001 ISBN: 0214909</pubInfo>
         <condition>poor</condition>
-        <lister>Lister@listed.com</lister>
+        <lister>joe@bloggs.com</lister>
         <status>Available</status>
         <price>33</price>
         <count>1</count>
