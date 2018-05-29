@@ -51,25 +51,9 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
-    <target name="wsimport-client-bookApp" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/bookApp"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/bookApp" destdir="${build.generated.dir}/jax-wsCache/bookApp" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/bookApp/wsdl/localhost_8080/WSAssignment/bookApp.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSAssignment/bookApp?wsdl" xnocompile="true" xendorsed="true" package="uts.assign.soap.client">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/bookApp/wsdl/localhost_8080/WSAssignment/bookApp.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/bookApp"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/bookApp">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-bookApp" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/uts/assign/soap/client"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/bookApp"/>
-    </target>
     <target name="wsimport-client-diaryApp" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/diaryApp"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/diaryApp" destdir="${build.generated.dir}/jax-wsCache/diaryApp" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/diaryApp/wsdl/localhost_8080/WSAssignment/diaryApp.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSAssignment/diaryApp?wsdl" xnocompile="true" xendorsed="true" package="uts.assign.soap.client">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/diaryApp" destdir="${build.generated.dir}/jax-wsCache/diaryApp" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/diaryApp/wsdl/localhost_8080/WSAssignment/diaryApp.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/wsassignment/diaryApp?wsdl" xnocompile="true" xendorsed="true" package="uts.assign.soap.client">
             <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/diaryApp/wsdl/localhost_8080/WSAssignment/diaryApp.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/diaryApp"/>
         </wsimport>
@@ -83,37 +67,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/uts/assign/soap/client"/>
         <delete dir="${build.generated.dir}/jax-wsCache/diaryApp"/>
     </target>
-    <target name="wsimport-client-bookApp_1" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/bookApp_1"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/bookApp_1" destdir="${build.generated.dir}/jax-wsCache/bookApp_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/bookApp_1/wsdl/localhost_8080/WSAssignment/bookApp.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSAssignment/bookApp?wsdl" xnocompile="true" xendorsed="true" package="uts.assign.soap.client">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/bookApp_1/wsdl/localhost_8080/WSAssignment/bookApp.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/bookApp_1"/>
+    <target name="wsimport-client-bookApp" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/bookApp"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/bookApp" destdir="${build.generated.dir}/jax-wsCache/bookApp" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/bookApp/wsdl/localhost_8080/wsassignment/bookApp.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/wsassignment/bookApp?wsdl" xnocompile="true" xendorsed="true" package="uts.assign.soap.client">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/bookApp/wsdl/localhost_8080/wsassignment/bookApp.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/bookApp"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/bookApp_1">
+            <fileset dir="${build.generated.dir}/jax-wsCache/bookApp">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-bookApp_1" depends="-init-project">
+    <target name="wsimport-client-clean-bookApp" depends="-init-project">
         <delete dir="${build.generated.sources.dir}/jax-ws/uts/assign/soap/client"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/bookApp_1"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/bookApp"/>
     </target>
-    <target name="wsimport-client-bookApp_2" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/bookApp_2"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/bookApp_2" destdir="${build.generated.dir}/jax-wsCache/bookApp_2" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/bookApp_2/wsdl/localhost_8080/WSAssignment/bookApp.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WSAssignment/bookApp?wsdl" xnocompile="true" xendorsed="true" package="uts.assign.soap.client">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/bookApp_2/wsdl/localhost_8080/WSAssignment/bookApp.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/bookApp_2"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/bookApp_2">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-bookApp_2" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/uts/assign/soap/client"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/bookApp_2"/>
-    </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-bookApp, wsimport-client-diaryApp, wsimport-client-bookApp_1, wsimport-client-bookApp_2"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-diaryApp, wsimport-client-bookApp"/>
 </project>
