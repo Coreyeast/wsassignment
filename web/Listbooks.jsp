@@ -52,16 +52,17 @@
                 <p> Title: <%=title%> </p>
                 <p> Click <a href='index.jsp'>here</a> to return to main page. </p>
                 
-                 <% int count; 
+                 <% /*int count; 
                     if (books.getBookName(title) != null) {
                     count = books.bookCount();
                     }
                     else {
                         count = 1;
                     }
+                    */
                 %>
-                 <p> Current counter: <%=count%> </p>
-                 <% session.setAttribute("count", count); %>
+                <%-- <p> Current counter: <%=count%> </p>
+                 <% session.setAttribute("count", count); %> --%>
                 
                 <%Book book = new Book(books.createID(), title, author, absstract, pubInfo, condition, lister, count); %> 
                 <% session.setAttribute("book", book); %>

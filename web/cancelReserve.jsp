@@ -47,6 +47,7 @@
                 reserveApp.saveReservations();
                 */
         %>
+        
         <h1> reservation has been canceled! </h1>
         <%=status%>
         <p><a href='index.jsp'> home</a> </p>

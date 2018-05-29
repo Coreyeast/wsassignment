@@ -27,6 +27,7 @@
         <ul>
             <li>
                 <a href="Listbooks.jsp">List A book</a>
+               <%--<a href="reserved.jsp"> View reservations </a>*/ --%>
             </li>
         </ul>
         
@@ -35,7 +36,7 @@
        "http://localhost:8080/wsassignment/rest/bookApp/books/filter"--%>
         <%
 
-            String xml ="books.xml"; // location of the XML file
+            String xml ="http://localhost:8080/wsassignment/rest/bookApp/books/filter"; // location of the XML file
 
             String xsl = "books.xsl"; // location of the XSL file
 

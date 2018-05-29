@@ -27,8 +27,10 @@
                         <td>Abstract </td>
                         <td>Pubinfo </td>
                         <td>Condition </td>
+                        <td>Price </td>
                         <td>Lister </td>
-                        <td> Status </td>
+                        <td>Status </td>
+                        
                     </tr> 
                 </thead>
                 <tbody>
@@ -54,7 +56,7 @@
         </tr>
     </xsl:template>
     
-    <xsl:template match="book/*">
+    <xsl:template match="book/id|title|author|abstract|condition|lister|price|count|status">
         <td>
             <xsl:apply-templates/>
         </td>

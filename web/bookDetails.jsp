@@ -62,15 +62,37 @@
         <%=abstractt%> 
     </p>
     <p>
-        ISBN: <%=pubInfo%>
+        Additional Information: 
+        <%
+            String xml ="WEB-INF/books.xml"; // location of the XML file
+            String xsl = "booksDetail.xsl"; // location of the XSL file
+        %>
+
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+        <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+
+        <c:set var="xml" value="<%=xml%>"/>
+
+        <c:set var="xsl" value="<%=xsl%>"/>
+
+        <c:import url="${xml}" var="xmldocument"/>
+
+        <c:import url="${xsl}" var="xslt"/>
+
+        <x:transform xml="${xmldocument}" xslt="${xslt}"/>
     </p>
+    
     <p>
         Listed by: <%=lister%>
     </p>
     
+    
+    
     <h2>
         <u>Reserve this book</u>
     </h2>
+    
     <form action='reserved.jsp' method='post'>
         Please enter your name: <input type='text' name='name'> <br> <br>
         Please enter your email: <input type='text' name='email'> 
