@@ -19,12 +19,6 @@
 <message name="Exception">
 <part name="fault" element="tns:Exception"/>
 </message>
-<message name="addBooks">
-<part name="parameters" element="tns:addBooks"/>
-</message>
-<message name="addBooksResponse">
-<part name="parameters" element="tns:addBooksResponse"/>
-</message>
 <message name="fetchArray">
 <part name="parameters" element="tns:fetchArray"/>
 </message>
@@ -37,6 +31,12 @@
 <message name="fetchBooksResponse">
 <part name="parameters" element="tns:fetchBooksResponse"/>
 </message>
+<message name="addBooks">
+<part name="parameters" element="tns:addBooks"/>
+</message>
+<message name="addBooksResponse">
+<part name="parameters" element="tns:addBooksResponse"/>
+</message>
 <portType name="BookSOAP">
 <operation name="deleteBook">
 <input wsam:Action="http://soap.assign.uts/BookSOAP/deleteBookRequest" message="tns:deleteBook"/>
@@ -44,13 +44,6 @@
 <fault message="tns:JAXBException" name="JAXBException" wsam:Action="http://soap.assign.uts/BookSOAP/deleteBook/Fault/JAXBException"/>
 <fault message="tns:IOException" name="IOException" wsam:Action="http://soap.assign.uts/BookSOAP/deleteBook/Fault/IOException"/>
 <fault message="tns:Exception" name="Exception" wsam:Action="http://soap.assign.uts/BookSOAP/deleteBook/Fault/Exception"/>
-</operation>
-<operation name="addBooks">
-<input wsam:Action="http://soap.assign.uts/BookSOAP/addBooksRequest" message="tns:addBooks"/>
-<output wsam:Action="http://soap.assign.uts/BookSOAP/addBooksResponse" message="tns:addBooksResponse"/>
-<fault message="tns:JAXBException" name="JAXBException" wsam:Action="http://soap.assign.uts/BookSOAP/addBooks/Fault/JAXBException"/>
-<fault message="tns:IOException" name="IOException" wsam:Action="http://soap.assign.uts/BookSOAP/addBooks/Fault/IOException"/>
-<fault message="tns:Exception" name="Exception" wsam:Action="http://soap.assign.uts/BookSOAP/addBooks/Fault/Exception"/>
 </operation>
 <operation name="fetchArray">
 <input wsam:Action="http://soap.assign.uts/BookSOAP/fetchArrayRequest" message="tns:fetchArray"/>
@@ -65,6 +58,13 @@
 <fault message="tns:JAXBException" name="JAXBException" wsam:Action="http://soap.assign.uts/BookSOAP/fetchBooks/Fault/JAXBException"/>
 <fault message="tns:IOException" name="IOException" wsam:Action="http://soap.assign.uts/BookSOAP/fetchBooks/Fault/IOException"/>
 <fault message="tns:Exception" name="Exception" wsam:Action="http://soap.assign.uts/BookSOAP/fetchBooks/Fault/Exception"/>
+</operation>
+<operation name="addBooks">
+<input wsam:Action="http://soap.assign.uts/BookSOAP/addBooksRequest" message="tns:addBooks"/>
+<output wsam:Action="http://soap.assign.uts/BookSOAP/addBooksResponse" message="tns:addBooksResponse"/>
+<fault message="tns:JAXBException" name="JAXBException" wsam:Action="http://soap.assign.uts/BookSOAP/addBooks/Fault/JAXBException"/>
+<fault message="tns:IOException" name="IOException" wsam:Action="http://soap.assign.uts/BookSOAP/addBooks/Fault/IOException"/>
+<fault message="tns:Exception" name="Exception" wsam:Action="http://soap.assign.uts/BookSOAP/addBooks/Fault/Exception"/>
 </operation>
 </portType>
 <binding name="BookSOAPPortBinding" type="tns:BookSOAP">
@@ -87,24 +87,6 @@
 <soap:fault name="Exception" use="literal"/>
 </fault>
 </operation>
-<operation name="addBooks">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-<fault name="JAXBException">
-<soap:fault name="JAXBException" use="literal"/>
-</fault>
-<fault name="IOException">
-<soap:fault name="IOException" use="literal"/>
-</fault>
-<fault name="Exception">
-<soap:fault name="Exception" use="literal"/>
-</fault>
-</operation>
 <operation name="fetchArray">
 <soap:operation soapAction=""/>
 <input>
@@ -124,6 +106,24 @@
 </fault>
 </operation>
 <operation name="fetchBooks">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="JAXBException">
+<soap:fault name="JAXBException" use="literal"/>
+</fault>
+<fault name="IOException">
+<soap:fault name="IOException" use="literal"/>
+</fault>
+<fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</fault>
+</operation>
+<operation name="addBooks">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -4,8 +4,8 @@
     <system systemId="http://localhost:8080/WSAssignment/diaryApp?xsd=1" uri="src/conf/xml-resources/web-service-references/diaryApp/wsdl/localhost_8080/WSAssignment/diaryApp.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/WSAssignment/bookApp?wsdl" uri="src/conf/xml-resources/web-service-references/bookApp_2/wsdl/localhost_8080/WSAssignment/bookApp.wsdl"/>
     <system systemId="http://localhost:8080/WSAssignment/bookApp?xsd=1" uri="src/conf/xml-resources/web-service-references/bookApp_2/wsdl/localhost_8080/WSAssignment/bookApp.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/wsassignment/diaryApp?wsdl" uri="src/conf/xml-resources/web-service-references/diaryApp/wsdl/localhost_8080/WSAssignment/diaryApp.wsdl"/>
-    <system systemId="http://localhost:8080/wsassignment/diaryApp?xsd=1" uri="src/conf/xml-resources/web-service-references/diaryApp/wsdl/localhost_8080/WSAssignment/diaryApp.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/wsassignment/bookApp?wsdl" uri="src/conf/xml-resources/web-service-references/bookApp/wsdl/localhost_8080/wsassignment/bookApp.wsdl"/>
     <system systemId="http://localhost:8080/wsassignment/bookApp?xsd=1" uri="src/conf/xml-resources/web-service-references/bookApp/wsdl/localhost_8080/wsassignment/bookApp.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/wsassignment/diaryApp?wsdl" uri="src/conf/xml-resources/web-service-references/diaryApp/wsdl/localhost_8080/wsassignment/diaryApp.wsdl"/>
+    <system systemId="http://localhost:8080/wsassignment/diaryApp?xsd=1" uri="src/conf/xml-resources/web-service-references/diaryApp/wsdl/localhost_8080/wsassignment/diaryApp.xsd_1.xsd"/>
 </catalog>
