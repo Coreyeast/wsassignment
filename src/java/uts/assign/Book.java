@@ -23,12 +23,12 @@ public class Book implements Serializable {
     private String lister;
     @XmlElement(name="status")
     private String status;
-    @XmlElement(name="count")
-    private int count;
+    //@XmlElement(name="count")
+    //private int count;
     @XmlElement(name="price")
-    private double price;
+    private int price;
 
-    public Book(int id, String title, String author, String absstract, String pubInfo, String condition, String lister, int count, double price) {
+    public Book(int id, String title, String author, String absstract, String pubInfo, String condition, String lister, int price) { //int count 
         super();
         this.id = id;
         this.title = title;
@@ -39,14 +39,14 @@ public class Book implements Serializable {
         this.lister = lister;
         this.price = price;
         this.status = "Available";
-        this.count = count;
+        //this.count = count;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
-    public double getPrice() {
+    public int getPrice() {
         return price;
     }
 
@@ -58,13 +58,13 @@ public class Book implements Serializable {
         this.id = id;
     }
 
-    public void setCount(int count) {
+   /* public void setCount(int count) {
         this.count = count;
     }
 
     public int getCount() {
         return count;
-    }
+    }*/
 
     
     public String getLister() {
