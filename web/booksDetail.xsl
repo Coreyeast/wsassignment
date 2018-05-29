@@ -35,6 +35,14 @@
 
     <xsl:template match="books/book/pubInfo/*">
         <td>
+            <xsl:choose>
+                <xsl:when test="@id = ">
+                    <xsl:value-of select='year' />
+                    <xsl:value-of select="edition"/>
+                </xsl:when>
+                <xsl:otherwise/>
+                    
+            </xsl:choose>
             <xsl:apply-templates/>
         </td>
     </xsl:template>

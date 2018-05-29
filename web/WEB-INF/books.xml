@@ -11,14 +11,11 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
         <title>Gone</title>
         <author>Micheal grant</author>
         <abstract>Kids</abstract>
-        <pubInfo>
-                <edition>Frist Edition</edition>
-                <year>2008</year>
-        </pubInfo>
+        <pubInfo>21313</pubInfo>
         <condition>Poor</condition>
-        <price>48</price>
         <lister>patt.stacked@gmail.com</lister>
         <status>Available</status>
+        <price>48</price>
         <count>1 </count>
     </book>
     <book>
@@ -26,14 +23,11 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
         <title>Title of book</title>
         <author>Author</author>
         <abstract>Abstract</abstract>
-        <pubInfo>
-                <edition>Frist Edition</edition>
-                <year>2008</year>
-        </pubInfo>
+        <pubInfo>123</pubInfo>
         <condition>new</condition>
-        <price>38</price>
         <lister>patt.stacked@gmail.com</lister>
-        <status>Available</status>      
+        <status>Available</status>
+        <price>38</price>
         <count>1 </count>
     </book>
     <book>
@@ -41,14 +35,11 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
         <title>Title</title>
         <author>Autuytjhor</author>
         <abstract>Abyjrtstract</abstract>
-        <pubInfo>
-                <edition>Frist Edition</edition>
-                <year>2008</year>
-        </pubInfo>
+        <pubInfo>12yjrtj3</pubInfo>
         <condition>poor</condition>
-        <price>33</price>
         <lister>patt.stacked@gmail.com</lister>
-        <status>Available</status>        
+        <status>Available</status>
+        <price>33</price>
         <count> 1</count>
     </book>
     <book>
@@ -56,14 +47,11 @@ xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
         <title>Hello</title>
         <author>dwsafdas</author>
         <abstract>Abyddjrtstract</abstract>
-        <pubInfo>
-                <edition>Frist Edition</edition>
-                <year>2008</year>
-        </pubInfo>
+        <pubInfo>12yfdsfdwfdjrtj3</pubInfo>
         <condition>poor</condition>
-        <price>40</price>
         <lister>joe@bloggs.com</lister>
-        <status>Available</status>       
+        <status>Available</status>
+        <price>40</price>
         <count>1</count>
     </book>
 </books>
