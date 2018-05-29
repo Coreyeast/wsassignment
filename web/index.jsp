@@ -31,10 +31,11 @@
         </ul>
         
         
-       <%-- //THIS IS WHAT ALLOWS THE XSL TRANSFORM --%>
+       <%-- //THIS IS WHAT ALLOWS THE XSL TRANSFORM 
+       "http://localhost:8080/wsassignment/rest/bookApp/books/filter"--%>
         <%
 
-            String xml ="http://localhost:8080/wsassignment/rest/bookApp/books/filter"; // location of the XML file
+            String xml ="books.xml"; // location of the XML file
 
             String xsl = "books.xsl"; // location of the XSL file
 

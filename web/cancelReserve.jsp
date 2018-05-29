@@ -20,15 +20,17 @@
    <jsp:useBean id="bookApp" class="uts.assign.BookApplication" scope="application">
     <jsp:setProperty name="bookApp" property="filePath" value="<%=filePath2%>"/>
     </jsp:useBean>
+              <% String filePath = application.getRealPath("WEB-INF/reserve.xml");%>
+   
+   <jsp:useBean id="reserveApp" class="uts.assign.ReserveApplication" scope="application">
+    <jsp:setProperty name="reserveApp" property="filePath" value="<%=filePath%>"/>
+    </jsp:useBean>
         
         <%!
-            String status;
-            
+            String status = "avaliable";   
         %>
         
-        <%  status = request.getParameter("status");
-            if(status.matches("Unavailable")) {
-               session.setAttribute(status, "Available");
+        <%     
                 Books books = bookApp.getBooks();
                 String id = request.getParameter("id"); //Gives me the num
                 int ids = Integer.parseInt(id);
@@ -36,14 +38,17 @@
                 bookApp.updateXML(books, filePath2);
                 bookApp.saveBooks();
                 
+              /* //THIS PART NEEDS WORK
+                Reservations reservations = reserveApp.getReservations();
+                Reservation reservation = new Reservation(email,name,title,ids);
+                session.setAttribute("reservation", reservation);
+                reservations.removeReservation(reservation);
+                reserveApp.updateXML(reservations, filePath);
+                reserveApp.saveReservations();
+                */
         %>
         <h1> reservation has been canceled! </h1>
         <%=status%>
         <p><a href='index.jsp'> home</a> </p>
-        
-        <%}else{%>
-        
-        <h1> Status is AVALIABLE</h1>
-        <% %>
     </body>
 </html>
