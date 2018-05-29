@@ -61,13 +61,17 @@
         <p> Click <a href='ListBooksNew.jsp'>here</a> to go back. </P>
         <% }else{%>
         <%  if (tos != null) { %>
-            <%session.getAttribute("book");%>
+            <%session.getAttribute("book");
+            String price = request.getParameter("price"); //Gives me 1
+
+                    int price2 = Integer.parseInt(price); //id's now = 1
+            %>
             
                 <h1>Book successfully listed</h1>
                 <p> Title: <%=title%> </p>
                 <p> Click <a href='index.jsp'>here</a> to return to main page. </p>
                 
-                <%Book book = new Book(books.createID(), title, author, absstract, pubInfo, condition, lister, price); %> 
+                <%Book book = new Book(books.createID(), title, author, absstract, pubInfo, condition, lister, price2); %> 
                 <% session.setAttribute("book", book); %>
                 
                 <%books.addBook(book);%>      
