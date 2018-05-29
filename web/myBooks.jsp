@@ -23,7 +23,7 @@
         <div style="background: #eee; border: solid 1px #333; text-align: right; width: 100%;">
             You are logged in as <%=user.getName()%> < <%=user.getEmail()%> > 
         </div>
-        <div style="text-align: right;"><a href="logout.jsp">Logout</a></div>
+                <div style="text-align: right;"><a href="myBooks.jsp">My Books</a> | <a href="logout.jsp">Logout</a></div>
         <h1>Book Site</h1>
         <ul>
             <li>
