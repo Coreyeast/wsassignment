@@ -5,6 +5,18 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 
+    <xs:simpleType name="email">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\w+([-+.^_]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+        <xs:simpleType name="name">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z][a-z]+( [A-Z][a-z])*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
 <xs:schema version="1.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
@@ -16,7 +28,7 @@ and open the template in the editor.
             <xs:complexType>
                 <xs:sequence>
                     <xs:element name="email" type="xs:string"/>
-                    <xs:element name="name" type="name"/>
+                    <xs:element name="name" type="xs:string"/>
                     <xs:element name="password" type="xs:string"/>
                 </xs:sequence>
             </xs:complexType>
