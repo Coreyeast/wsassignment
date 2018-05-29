@@ -26,9 +26,9 @@
                         <td>Author </td>
                         <td>Abstract </td>
                         <td>Condition </td>
-                        <td>Price </td>
                         <td>Lister </td>
-                        <td>Status </td>             
+                        <td>Status </td>
+                        <td>Price </td>             
                     </tr> 
                 </thead>
                 <tbody>

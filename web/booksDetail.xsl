@@ -11,7 +11,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output method="html"/>
     
-    <xsl:template match="books/book/pubInfo">
+    <xsl:template match="reservations">
         <html>
             <head>
                 <style>
@@ -21,9 +21,10 @@
             <table border="1">
                 <thead>
                 <tr>
-                    <td>Edition </td>
-                    <td>Year </td>
-                    <td>ISBN </td>
+                    <td>Email </td>
+                    <td>Name </td>
+                    <td>Title </td>
+                    <td>ID</td>
                 </tr> 
                 </thead>
                 <tbody>
@@ -32,23 +33,17 @@
             </table>
         </html>
     </xsl:template>
-
-    <xsl:template match="books/book/pubInfo/*">
-        <td>
-            <xsl:choose>
-                <xsl:when test="@id = ">
-                    <xsl:value-of select='year' />
-                    <xsl:value-of select="edition"/>
-                </xsl:when>
-                <xsl:otherwise/>
-                    
-            </xsl:choose>
+    
+     <xsl:template match="reservation">
+        <tr>
             <xsl:apply-templates/>
-        </td>
+        </tr>
     </xsl:template>
     
-    <xsl:template match="books/book/id|title|author|price|lister|abstract|condition|status|count">
-        
+    <xsl:template match="reservation/*">
+        <td>
+            <xsl:apply-templates/>
+        </td>
     </xsl:template>
    
 </xsl:stylesheet>

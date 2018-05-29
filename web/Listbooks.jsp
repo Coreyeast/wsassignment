@@ -12,10 +12,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    <%User user = (User) session.getAttribute("user");%>
+        
+       <%-- //IF THE USER IS LOGGED IN --%>
+      <div style="background: #eee; border: solid 1px #333; text-align: right; width: 100%;">
+            You are logged in as <%=user.getName()%> < <%=user.getEmail()%> > 
+        </div>
+        <div style="text-align: right;"><a href="index.jsp">Home</a> | <a href="logout.jsp">Logout</a></div>   
+       
+        
     
     <%  String title = request.getParameter("title");
         String absstract = request.getParameter("abstract");
@@ -25,7 +33,7 @@
         String tos = request.getParameter("tos");
         String submitted = request.getParameter("submitted");
         
-        User user = (User) session.getAttribute("user");
+        
         String lister = user.getEmail();
         
 

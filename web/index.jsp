@@ -14,7 +14,7 @@
         <title>Index</title>
     </head>
     <body>
-        <h1>Book Site</h1>
+        
         <%User user = (User) session.getAttribute("user");%>
         
        <%-- //IF THE USER IS LOGGED IN --%>
@@ -24,6 +24,7 @@
             You are logged in as <%=user.getName()%> < <%=user.getEmail()%> > 
         </div>
         <div style="text-align: right;"><a href="logout.jsp">Logout</a></div>
+        <h1>Book Site</h1>
         <ul>
             <li>
                 <a href="Listbooks.jsp">List A book</a>
