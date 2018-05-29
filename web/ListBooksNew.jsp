@@ -18,7 +18,8 @@
                 <tr><td> Title: </td> <td> <input type="text" name="title"/></td></tr>
                 <tr><td> Author: </td> <td> <input type="text" name="author"/></td></tr>
                 <tr><td> Abstract: </td> <td> <input type="text" name="abstract"/></td></tr>
-                <tr><td> Publication information (ISBN etc.): </td> <td> <input type="text" name="pubInfo"/> </td></tr>    
+                <tr><td> Publication information (ISBN etc.): </td> <td> <input type="text" name="pubInfo"/> </td></tr>
+                 <tr><td> Price: </td> <td> <input type="text" name="price"/> </td></tr>
                 <tr><td> Condition: </td> <td> 
                         <select name="condition">
                             <option value="poor" >Poor</option>
