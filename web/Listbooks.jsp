@@ -16,15 +16,15 @@
         <title>JSP Page</title>
     </head>
     <%User user = (User) session.getAttribute("user");%>
-        
-       <%-- //IF THE USER IS LOGGED IN --%>
-      <div style="background: #eee; border: solid 1px #333; text-align: right; width: 100%;">
-            You are logged in as <%=user.getName()%> < <%=user.getEmail()%> > 
-        </div>
-        <div style="text-align: right;"><a href="index.jsp">Home</a> | <a href="logout.jsp">Logout</a></div>   
-       
-        
-    
+
+    <%-- //IF THE USER IS LOGGED IN: HEADER --%>
+    <div style="background: #eee; border: solid 1px #333; text-align: right; width: 100%;">
+        You are logged in as <%=user.getName()%> < <%=user.getEmail()%> > 
+    </div>
+    <div style="text-align: right;"><a href="index.jsp">Home</a> | <a href="logout.jsp">Logout</a></div>   
+
+
+
     <%  String title = request.getParameter("title");
         String absstract = request.getParameter("abstract");
         String author = request.getParameter("author");
@@ -32,65 +32,66 @@
         String condition = request.getParameter("condition");
         String tos = request.getParameter("tos");
         String submitted = request.getParameter("submitted");
-        
-        
+
         String lister = user.getEmail();
-        
+
 
     %>
- 
+
     <% String filePath = application.getRealPath("WEB-INF/books.xml");%>
-   
-   <jsp:useBean id="bookApp" class="uts.assign.BookApplication" scope="application">
-    <jsp:setProperty name="bookApp" property="filePath" value="<%=filePath%>"/>
+
+    <jsp:useBean id="bookApp" class="uts.assign.BookApplication" scope="application">
+        <jsp:setProperty name="bookApp" property="filePath" value="<%=filePath%>"/>
     </jsp:useBean> 
 
     <%Books books = bookApp.getBooks();%>
-    
+
     <body>
+        <%-- Checks to see if all fields have been filled correctly --%>
         <% if (submitted != null && submitted.equals("yes")) { %>
-        <% if (title.isEmpty() || author.isEmpty() || absstract.isEmpty() || pubInfo.isEmpty() ) {%>
+        <% if (title.isEmpty() || author.isEmpty() || absstract.isEmpty() || pubInfo.isEmpty()) {%>
         <p> Please provide all the fields </p>
         <p> Click <a href='Listbooks.jsp'>here</a> to go back. </P>
-        <% } else{%>
-        <%  if (tos != null) { %>
+            <% } else {%>
+            <%  if (tos != null) { %>
             <%session.getAttribute("book");%>
-            
-                <h1>Book successfully listed</h1>
-                <p> Title: <%=title%> </p>
-                <p> Click <a href='index.jsp'>here</a> to return to main page. </p>
-                
-                 <% /*int count; 
-                    if (books.getBookName(title) != null) {
-                    count = books.bookCount();
-                    }
-                    else {
-                        count = 1;
-                    }
-                    */
-                     String price = request.getParameter("price"); //Gives me 1
 
-                    int price2 = Integer.parseInt(price); //id's now = 1
-                %>
-                <%-- <p> Current counter: <%=count%> </p>
-                 <% session.setAttribute("count", count); %> --%>
-                
-                
-                
-                <%Book book = new Book(books.createID(), title, author, absstract, pubInfo, condition, lister, price2); %> 
-                <% session.setAttribute("book", book); %>
-                
-                <%books.addBook(book);%>      
-                <%bookApp.updateXML(books, filePath); %>
-                <%bookApp.saveBooks(); %> 
-                
-                
-            <%} else {%>
-                <p> Please agree to TOS </p>
-                <p> Click <a href='Listbooks.jsp'>here</a> to go back. </P>
-                <%} %>
-                
-        <% } }else { %>
+        <h1>Book successfully listed</h1>
+        <p> Title: <%=title%> </p>
+        <p> Click <a href='index.jsp'>here</a> to return to main page. </p>
+
+        <% /*int count; 
+           if (books.getBookName(title) != null) {
+           count = books.bookCount();
+           }
+           else {
+               count = 1;
+           }
+             */
+            String price = request.getParameter("price"); //Gives me 1
+
+            int price2 = Integer.parseInt(price); //id's now = 1
+        %>
+        <%-- <p> Current counter: <%=count%> </p>
+         <% session.setAttribute("count", count); %> --%>
+
+
+
+        <%Book book = new Book(books.createID(), title, author, absstract, pubInfo, condition, lister, price2); %> 
+        <% session.setAttribute("book", book); %>
+
+        <%books.addBook(book);%>      
+        <%bookApp.updateXML(books, filePath); %>
+        <%bookApp.saveBooks(); %> 
+
+
+        <%} else {%>
+        <p> Please agree to TOS </p>
+        <p> Click <a href='Listbooks.jsp'>here</a> to go back. </P>
+            <%} %>
+
+        <% }
+        } else { %>
         <h1>List a book</h1>
         <form action="Listbooks.jsp" method="post">
             <table>

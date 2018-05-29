@@ -13,6 +13,7 @@
     </head>
     <body>
                 <h1>List a book</h1>
+                <%-- Form to allow users to list a book --%>
         <form action="ListBooksAction.jsp" method="post">
             <table>
                 <tr><td> Title: </td> <td> <input type="text" name="title"/></td></tr>
@@ -29,7 +30,7 @@
                         </select>
 
                 <tr><td>Agree to TOS</td> <td> <input type="checkbox" name="tos"/></td></tr>
-
+                
                 <tr><td></td> <td> <input type="submit" value="Register"/></td></tr>
                 <input type="hidden" name="submitted" value="yes">
             </table>

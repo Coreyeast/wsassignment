@@ -1,4 +1,5 @@
 
+<%@page import="uts.assign.User"%>
 <%@page import="uts.assign.Book"%>
 <%@page import="uts.assign.Books"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -10,17 +11,29 @@
     <title>JSP Page</title>
     <style>
         div {
-    max-width: 800px;
-    min-width: 100px;
-    background-color: powderblue;
-    margin: auto;
-}
-    
+            max-width: 800px;
+            min-width: 100px;
+            background-color: powderblue;
+            margin: auto;
+        }
+
     </style>
+    
+    <%User user = (User) session.getAttribute("user");%>
+
+    <%-- //checks if user is logged in --%>
+
+    <% if (user != null) {%>
     <div style="background: #eee; border: solid 1px #333; text-align: right; width: 100%;">
-            You are not logged in
-        </div>
-        <div style="text-align: right;"><a href="index.jsp">Home</a> | <a href="login.jsp">Login</a> | <a href="register.jsp">Register</a></div>
+        You are logged in as <%=user.getName()%> < <%=user.getEmail()%> > 
+    </div>
+    <div style="text-align: right;"><a href="index.jsp">Home</a> |<a href="logout.jsp">Logout</a></div>
+    <% }else{ %>
+    <div style="background: #eee; border: solid 1px #333; text-align: right; width: 100%;">
+        You are not logged in
+    </div>
+    <div style="text-align: right;"><a href="index.jsp">Home</a> | <a href="login.jsp">Login</a> | <a href="register.jsp">Register</a></div>
+    <% } %>
 </head>
 <body>
 
@@ -41,7 +54,7 @@
         String condition;
         String status;
         String lister;
-            %>
+                            %>
 
     <%
         String id = request.getParameter("id"); //Gives me 1
@@ -61,35 +74,33 @@
     <h3 align='center'>
         <i> By: <%=author%> </i>
     </h3>
-    
+
     <div>
         <p>
-        <%=abstractt%> 
-    </p>
-    <p>
-        Additional Information: 
-        <%=pubInfo%>
-    </p>
-    
-    <p>
-        Listed by: <%=lister%>
-    </p>
-    
-    
-    
-    <h2>
-        <u>Reserve this book</u>
-    </h2>
-    
-    <form action='reserved.jsp' method='post'>
-        Please enter your name: <input type='text' name='name'> <br> <br>
-        Please enter your email: <input type='text' name='email'> 
-        <input type="hidden" name="title" value='<%=title%>'/>
-        <input type="hidden" name="id" value='<%=id%>'/><br><br>
-        <input type='hidden' name='status' value='unavailable'/>
-        <input type='submit' value='Reserve this book'/>
-    </form>
-    
+            <%=abstractt%> 
+        </p>
+        <p>
+            Additional Information: 
+            <%=pubInfo%>
+        </p>
+
+        <p>
+            Listed by: <%=lister%>
+        </p>
+
+        <h2>
+            <u>Reserve this book</u>
+        </h2>
+        <%-- Fields to reserve a book! --%>
+        <form action='reserved.jsp' method='post'>
+            Please enter your name: <input type='text' name='name'> <br> <br>
+            Please enter your email: <input type='text' name='email'> 
+            <input type="hidden" name="title" value='<%=title%>'/>
+            <input type="hidden" name="id" value='<%=id%>'/><br><br>
+            <input type='hidden' name='status' value='unavailable'/>
+            <input type='submit' value='Reserve this book'/>
+        </form>
+
     </div>
 
 </body>

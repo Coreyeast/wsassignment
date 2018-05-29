@@ -67,7 +67,7 @@
             You are not logged in
         </div>
         <div style="text-align: right;"><a href="index.jsp">Home</a> | <a href="login.jsp">Login</a> | <a href="register.jsp">Register</a></div>
-        
+        <h1>Book Site</h1>
         
         <%-- //THIS IS WHAT ALLOWS THE XSL TRANSFORM --%>
          <%

@@ -26,6 +26,7 @@
     </head>
     
     <%
+        //Error Checking: If the request fails, go to catch
         try{
         String title = request.getParameter("title");
         String absstract = request.getParameter("abstract");
@@ -70,21 +71,21 @@
                 <h1>Book successfully listed</h1>
                 <p> Title: <%=title%> </p>
                 <p> Click <a href='index.jsp'>here</a> to return to main page. </p>
-                
+                <%-- Creates a new book and stores in a session --%>
                 <%Book book = new Book(books.createID(), title, author, absstract, pubInfo, condition, lister, price2); %> 
                 <% session.setAttribute("book", book); %>
                 
+                <%-- Writes created book into XML --%>
                 <%books.addBook(book);%>      
                 <%bookApp.updateXML(books, filePath); %>
                 <%bookApp.saveBooks(); %> 
-                
-                
                 
             <%} else {%>
                 <p> Please agree to TOS </p>
                 <p> Click <a href='ListBooksNew.jsp'>here</a> to go back. </P>
                 <%} %>
                 
+                <%-- Error has occured --%>
         <% } } } catch(NullPointerException ex){%>
             <p>Author could not be found</p>
             <% }  catch (Exception e){%>
