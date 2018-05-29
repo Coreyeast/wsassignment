@@ -23,6 +23,10 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reserved</title>
         
+        <div style="background: #eee; border: solid 1px #333; text-align: right; width: 100%;">
+            You are not logged in
+        </div>
+        <div style="text-align: right;"><a href="index.jsp">Home</a> | <a href="login.jsp">Login</a> | <a href="register.jsp">Register</a></div>
         <%!
             String name;
             String email;

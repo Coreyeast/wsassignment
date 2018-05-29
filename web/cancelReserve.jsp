@@ -38,7 +38,7 @@
                 bookApp.updateXML(books, filePath2);
                 bookApp.saveBooks();
                 
-              /* //THIS PART NEEDS WORK
+              /* //THIS PART NEEDS WORK 
                 Reservations reservations = reserveApp.getReservations();
                 Reservation reservation = new Reservation(email,name,title,ids);
                 session.setAttribute("reservation", reservation);
@@ -47,7 +47,10 @@
                 reserveApp.saveReservations();
                 */
         %>
-        
+        <div style="background: #eee; border: solid 1px #333; text-align: right; width: 100%;">
+            You are not logged in
+        </div>
+        <div style="text-align: right;"><a href="index.jsp">Home</a> | <a href="login.jsp">Login</a> | <a href="register.jsp">Register</a></div>
         <h1> reservation has been canceled! </h1>
         <%=status%>
         <p><a href='index.jsp'> home</a> </p>

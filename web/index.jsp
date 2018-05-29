@@ -66,7 +66,7 @@
         <div style="background: #eee; border: solid 1px #333; text-align: right; width: 100%;">
             You are not logged in
         </div>
-        <div style="text-align: right;"><a href="login.jsp">Login</a> | <a href="register.jsp">Register</a></div>
+        <div style="text-align: right;"><a href="index.jsp">Home</a> | <a href="login.jsp">Login</a> | <a href="register.jsp">Register</a></div>
         
         
         <%-- //THIS IS WHAT ALLOWS THE XSL TRANSFORM --%>
