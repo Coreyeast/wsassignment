@@ -24,7 +24,7 @@
         String condition = request.getParameter("condition");
         String tos = request.getParameter("tos");
         String submitted = request.getParameter("submitted");
-        String price = request.getParameter("price");
+        
         User user = (User) session.getAttribute("user");
         String lister = user.getEmail();
         
@@ -41,7 +41,7 @@
     
     <body>
         <% if (submitted != null && submitted.equals("yes")) { %>
-        <% if (title.isEmpty() || author.isEmpty() || absstract.isEmpty() || pubInfo.isEmpty() || price.isEmpty() ) {%>
+        <% if (title.isEmpty() || author.isEmpty() || absstract.isEmpty() || pubInfo.isEmpty() ) {%>
         <p> Please provide all the fields </p>
         <p> Click <a href='Listbooks.jsp'>here</a> to go back. </P>
         <% } else{%>
@@ -60,20 +60,22 @@
                         count = 1;
                     }
                     */
+                     String price = request.getParameter("price"); //Gives me 1
+
+                    int price2 = Integer.parseInt(price); //id's now = 1
                 %>
                 <%-- <p> Current counter: <%=count%> </p>
                  <% session.setAttribute("count", count); %> --%>
                 
-                <%Book book = new Book(books.createID(), title, author, absstract, pubInfo, condition, lister, count); %> 
+                
+                
+                <%Book book = new Book(books.createID(), title, author, absstract, pubInfo, condition, lister, price2); %> 
                 <% session.setAttribute("book", book); %>
                 
                 <%books.addBook(book);%>      
                 <%bookApp.updateXML(books, filePath); %>
                 <%bookApp.saveBooks(); %> 
                 
-               
-                
-               
                 
             <%} else {%>
                 <p> Please agree to TOS </p>
@@ -87,7 +89,8 @@
                 <tr><td> Title: </td> <td> <input type="text" name="title"/></td></tr>
                 <tr><td> Author: </td> <td> <input type="text" name="author"/></td></tr>
                 <tr><td> Abstract: </td> <td> <input type="text" name="abstract"/></td></tr>
-                <tr><td> Publication information (ISBN etc.): </td> <td> <input type="text" name="pubInfo"/> </td></tr>    
+                <tr><td> Publication information (Year, Edition, ISBN etc.): </td> <td> <input type="text" name="pubInfo"/> </td></tr>
+                <tr><td> Price: </td> <td> <input type="text" name="price"/> </td></tr>
                 <tr><td> Condition: </td> <td> 
                         <select name="condition" >
                             <option value="poor" >Poor</option>
