@@ -30,5 +30,13 @@ public class Reservations implements Serializable {
     public void removeReservation(Reservation reservation) {
         list.remove(reservation);
     }
+    public Reservation updateReservation(int id) {
+        for (Reservation reservation : list) {
+            if (reservation.getId() == id) {
+                return reservation;
+            }
+        }
+        return null;
+    }
    
 }
