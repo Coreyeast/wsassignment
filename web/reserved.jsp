@@ -11,7 +11,8 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         
         <%@page import="uts.assign.*"%>
-        <% String filePath = application.getRealPath("WEB-INF/reserve.xml");%>
+        <% try {
+            String filePath = application.getRealPath("WEB-INF/reserve.xml");%>
         <jsp:useBean id="reserveApp" class="uts.assign.ReserveApplication" scope="application">
             <jsp:setProperty name="reserveApp" property="filePath" value="<%=filePath%>"/>
         </jsp:useBean>
@@ -25,7 +26,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Reserved</title>
 
-        <%User user = (User) session.getAttribute("user");%>
+           <% User user = (User) session.getAttribute("user");%>
 
         <%-- //checks if user is logged in --%>
 
@@ -109,8 +110,18 @@
     <h1>Book not reserved </h1>
     <p>Opps! It looks like you forgot to fill out one of the fields.</p>
     <p>Click <a href="bookDetails.jsp?id=<%=id%>">here</a> to try again</p>
-    <% }%>
-
+    
+        <% }%>
+        <% } catch(NullPointerException ex){ %>
+        <p> Please provide all the fields </p>
+        <p> Click <a href='index.jsp'>here</a> to go back. </P>
+        <% } catch(NumberFormatException ex){ %>
+        <p> ID could not be found. Please Log in. </p>
+        <p> Click <a href='Login.jsp'>here</a> to go log in. </P>
+        <% } catch(Exception ex){ %>
+        <p> You got an exception : <%= ex.getMessage() %> </p>
+        <p> Click <a href='login.jsp'>here</a> to go Log in. </P>
+        <% }  %>
 
 
 

@@ -87,9 +87,14 @@
                 
                 <%-- Error has occured --%>
         <% } } } catch(NullPointerException ex){%>
-            <p>Author could not be found</p>
-            <% }  catch (Exception e){%>
+            <p>User must be signed in to list a book. No user signed in.</p>
+            <p> Click <a href='login.jsp'>here</a> to Log in. </P>
+            <% } catch(NumberFormatException e){ %>
+            <p> Price cannot be alphabetic. Must be numeric</P>
+            <p> Click <a href='ListBooksNew.jsp'>here</a> to go back. </P>
+                <% }catch (Exception e){%>
         <p> You got an exception : (<%= e.getMessage() %> <% ;%>)</P>
+        <p> Click <a href='ListBooksNew.jsp'>here</a> to go back. </P>
         <% } %>
     </body>
 </html>

@@ -4,6 +4,7 @@
     Author     : Corey's-PC
 --%>
 
+<%@page import="java.util.ArrayList"%>
 <%-- 
      We will need to add the DiaryApp stuff here to connect the users the the users.xml file 
      - corey
@@ -41,11 +42,13 @@
     </head>
     <body>
         <% 
+            User user = new User(email,name,password);
+            Users users = diaryApp.getUsers();
             try{
             if(tos!=null && !email.isEmpty() && !name.isEmpty() && !password.isEmpty()) { 
                 int userCount = 0;
-                Users users = diaryApp.getUsers();
-                User user = new User(email,name,password);
+                
+                
                 session.setAttribute("user", user);
                 users.addUser(user);
                 diaryApp.updateXML(users, filePath);
@@ -68,15 +71,25 @@
         <h1>Account not created </h1>
         <p>Please agree the TOS</p>
         <p>Click <a href="register.jsp">here</a> to try again</p>
-        <%} else { %>
+        <%} else if(tos!=null && !email.isEmpty() && !name.isEmpty() && !password.isEmpty()) { 
+String email = request.getParameter("email");
+if (users.checkEmail(email) == null) { %>
+
+          <h1>Account not created </h1>
+        <p>User already exists!</p>
+        <p>Click <a href="register.jsp">here</a> to try again</p>
+<%} %>
+        <% } else { %>
         <h1>Account created!</h1>
         <br>
         <p>We have successfully created your account with the email < <%=email%> ></p>
         <p>Click <a href="index.jsp">here</a> to return to the main page</p>
         <% }  } catch(java.lang.NullPointerException ex){ %>
         <p>Fields are not filled in.</p>
+        <p>Click <a href="register.jsp">here</a> to go back.</p>
         <% } catch (Exception e){ %>
         <p>Exception is : (<%= e.getMessage() %> <% ; %>)</p>
+        <p>Click <a href="register.jsp">here</a> to go back.</p>
         <% System.out.println(e.getMessage());} %>
     </body>
 </html>

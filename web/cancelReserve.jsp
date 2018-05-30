@@ -16,7 +16,8 @@
     </head>
     <body>
  
-        <% String filePath2 = application.getRealPath("WEB-INF/books.xml");%>
+        <% try {
+            String filePath2 = application.getRealPath("WEB-INF/books.xml");%>
 
         <jsp:useBean id="bookApp" class="uts.assign.BookApplication" scope="application">
             <jsp:setProperty name="bookApp" property="filePath" value="<%=filePath2%>"/>
@@ -67,5 +68,10 @@
 
         <h1> Your reservation for has been canceled! </h1>
         <p>Click <a href='index.jsp'> here</a> to return home. </p>
+        
+        <% } catch(Exception ex){ %>
+        <p> Opps! something went wrong. </p>
+        <p> Click <a href='index.jsp'>here</a> to go back. </P>
+        <% } %>
     </body>
 </html>

@@ -25,8 +25,8 @@
         password = request.getParameter("password");
         tos = request.getParameter("tos");
     %>
-    
-   <% String filePath = application.getRealPath("WEB-INF/users.xml");%>
+    <% try{
+     String filePath = application.getRealPath("WEB-INF/users.xml");%>
    
    <jsp:useBean id="diaryApp" class="uts.assign.DiaryApplication" scope="application">
     <jsp:setProperty name="diaryApp" property="filePath" value="<%=filePath%>"/>
@@ -54,6 +54,12 @@
         <p> Sorry you must agree to the Terms of Service. </p>
         <p> Click <a href='register.jsp'>here</a> to go back. </P>
         
-        <%}%>
+        <%} } catch(NullPointerException ex){%>
+        <p> Please provide all the fields. </p>
+        <p> Click <a href='register.jsp'>here</a> to go back. </P>
+        <% } catch(Exception e){%>
+        <p> You got an error. </p>
+        <p> Click <a href='register.jsp'>here</a> to go back. </P>
+        <% } %>
     </body>
 </html>

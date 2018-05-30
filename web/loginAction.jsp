@@ -40,13 +40,15 @@
         %> 
         <hr>Login successful. Click <a href="index.jsp">here</a> to return to the main page.</p>
         <% } else { %>
-    <p> Its not a registered account. please click <a href="login.jsp">here</a> to sign in with registered account.</p>
+    <p> Wrong password or email. please click <a href="login.jsp">here</a> to sign in with right ID.</p>
     <% }
                        }
                    } catch (NullPointerException ex) {%>
     <p> You must provide an email address and password in order to login.</p>
+    <p>Please click <a href="login.jsp">here</a> to go back.</p>
     <% } catch (Exception e) {%>
     <p> You got an exception : (<%= e.getMessage()%> <% ;%>)</P>
+    <p>Please click <a href="login.jsp">here</a> to go back.</p>
         <% }%>
     </body>
 </html>

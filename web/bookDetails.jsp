@@ -19,7 +19,10 @@
 
     </style>
     
-    <%User user = (User) session.getAttribute("user");%>
+    <%
+        try {
+            User user = (User) session.getAttribute("user");
+    %>
 
     <%-- //checks if user is logged in --%>
 
@@ -37,7 +40,7 @@
 </head>
 <body>
 
-    <% String filePath = application.getRealPath("WEB-INF/books.xml");%>
+    <% String filePath = application.getRealPath("WEB-INF/books.xml"); %>
 
     <jsp:useBean id="bookApp" class="uts.assign.BookApplication" scope="application">
         <jsp:setProperty name="bookApp" property="filePath" value="<%=filePath%>"/>
@@ -68,7 +71,7 @@
         abstractt = answer.getAbsstract();
         pubInfo = answer.getPubInfo();
         lister = answer.getLister();
-    %>
+        %>
 
     <h1 align='center'><u>Book Details: <%=title%></u></h1>
     <h3 align='center'>
@@ -102,6 +105,15 @@
         </form>
 
     </div>
-
+        <% } catch(NullPointerException ex){ %>
+        <p> Please provide all the fields </p>
+        <p> Click <a href='bookDetails.jsp'>here</a> to go back. </P>
+        <% } catch(NumberFormatException ex){ %>
+        <p> You need to be logged in. </p>
+        <p> Click <a href='login.jsp'>here</a> to go Log in. </P>
+        <% } catch(Exception ex){ %>
+        <p> You got an exception : <%= ex.getMessage() %> </p>
+        <p> Click <a href='login.jsp'>here</a> to go Log in. </P>
+        <% }  %>
 </body>
 </html>
