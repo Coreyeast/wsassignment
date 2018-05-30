@@ -50,8 +50,8 @@ public class BookSOAP {
     }
         
     @WebMethod
-    public void addBooks(String title, String author, String absstract, String pubInfo, String condition, String lister ) throws JAXBException, IOException, Exception {
-        //fetchBooks().addBook(new Book(fetchBooks().createID(), title, author, absstract, pubInfo, condition, lister));
+    public void addBooks(String title, String author, String absstract, String pubInfo, String condition, String lister, int price ) throws JAXBException, IOException, Exception {
+        fetchBooks().addBook(new Book(fetchBooks().createID(), title, author, absstract, pubInfo, condition, lister, price));
     }
     
     @WebMethod

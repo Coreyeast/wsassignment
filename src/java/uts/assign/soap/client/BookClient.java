@@ -87,8 +87,9 @@ public class BookClient {
                                                 condition = "new";
                                                 break;
                                         }
-
-                                        bookApp.addBooks(title, author, absstract, pubInfo, condition, user.getEmail());
+                                        System.out.print("Price: ");
+                                        int price = scanner.nextInt(); 
+                                        bookApp.addBooks(title, author, absstract, pubInfo, condition, user.getEmail(),price);
                                         System.out.println("Book added!");
                                         break;
 
