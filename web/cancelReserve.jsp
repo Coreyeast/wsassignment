@@ -40,14 +40,12 @@
             bookApp.updateXML(books, filePath2);
             bookApp.saveBooks();
 
-            /* //THIS PART NEEDS WORK 
+            //THIS PART gets the reservation and removes it
                 Reservations reservations = reserveApp.getReservations();
-                Reservation reservation = new Reservation(email,name,title,ids);
-                session.setAttribute("reservation", reservation);
+                Reservation reservation = reservations.updateReservation(ids);
                 reservations.removeReservation(reservation);
                 reserveApp.updateXML(reservations, filePath);
                 reserveApp.saveReservations();
-             */
         %>
 
         <%-- HEADER: Logged in or not --%>

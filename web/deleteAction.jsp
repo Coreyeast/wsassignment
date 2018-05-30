@@ -37,14 +37,6 @@
             bookApp.updateXML(books, filePath2);
             bookApp.saveBooks();
 
-            /* //THIS PART NEEDS WORK 
-                Reservations reservations = reserveApp.getReservations();
-                Reservation reservation = new Reservation(email,name,title,ids);
-                session.setAttribute("reservation", reservation);
-                reservations.removeReservation(reservation);
-                reserveApp.updateXML(reservations, filePath);
-                reserveApp.saveReservations();
-             */
         %>
 
         <%-- HEADER: Logged in or not --%>

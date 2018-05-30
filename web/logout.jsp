@@ -16,6 +16,13 @@
     session.invalidate();
     %>
     <body>
+         <%-- //WHEN THE PERSON IS NOT A LISTER (NOT LOGGED IN)--%>
+        
+        <div style="background: #eee; border: solid 1px #333; text-align: right; width: 100%;">
+            You are not logged in
+        </div>
+        <div style="text-align: right;"><a href="index.jsp">Home</a> | <a href="login.jsp">Login</a> | <a href="register.jsp">Register</a></div>
+        <h1>Book Site</h1>
         <p>You have been logged out. Click <a href="index.jsp">here</a> to return to the main page.</p>
     </body>
 </html>
