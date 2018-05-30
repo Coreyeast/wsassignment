@@ -31,13 +31,15 @@
             String password;
             String gender;
             String tos;
-                                            %>
+            String DOB;
+                                                        %>
 
         <%
             name = request.getParameter("name");
             email = request.getParameter("email");
             password = request.getParameter("password");
             tos = request.getParameter("tos");
+            DOB = request.getParameter("DOB");
         %>
     </head>
     <body>
@@ -49,29 +51,12 @@
         <div style="text-align: right;"><a href="index.jsp">Home</a> | <a href="login.jsp">Login</a> | <a href="register.jsp">Register</a></div>
         <h1>Book Site</h1>
         <%
-            User user = new User(email, name, password);
+            User user = new User(email, name, password, DOB);
             Users users = diaryApp.getUsers();
 
-            if (users.checkEmail(email) != null) { %>
-        <h2>Account not created </h2>
-        <p>User already exists!</p>
-        <p>Click <a href="register.jsp">here</a> to try again</p>
-        <%} else { %>
+        %>
 
-
-
-        <% try {
-                if (tos != null && !email.isEmpty() && !name.isEmpty() && !password.isEmpty()) {
-                    int userCount = 0;
-
-                    session.setAttribute("user", user);
-                    users.addUser(user);
-                    diaryApp.updateXML(users, filePath);
-                    diaryApp.saveUsers();
-        %>    
-
-        <% }
-            if (email.isEmpty()) {%>
+        <% if (email.isEmpty()) {%>
         <p>Please provide the email!</p>
         <p>Click <a href="register.jsp">here</a> to try again</p>
         <% } else if (!email.matches("\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b")) { %>
@@ -87,21 +72,38 @@
         <h1>Account not created </h1>
         <p>Please agree the TOS</p>
         <p>Click <a href="register.jsp">here</a> to try again</p>
-        <%} else if (tos != null && !email.isEmpty() && !name.isEmpty() && !password.isEmpty()) {
-            String email = request.getParameter("email");
-             } else {%>
+        <%
+        } else {%>
+
+        <% try {
+                if (tos != null && !email.isEmpty() && !name.isEmpty() && !password.isEmpty() && !DOB.isEmpty()) {
+                    int userCount = 0;
+                    if (users.checkEmail(email)) {
+                        session.setAttribute("user", user);
+                        users.addUser(user);
+                        diaryApp.updateXML(users, filePath);
+                        diaryApp.saveUsers();
+        %>
         <h1>Account created!</h1>
         <br>
         <p>We have successfully created your account with the email < <%=email%> ></p>
         <p>Click <a href="index.jsp">here</a> to return to the main page</p>
-        <% }
-        } catch (java.lang.NullPointerException ex) { %>
+        <%} else {%>
+        <p> User already exists. </p>
+        <p>Click <a href="register.jsp">here</a> to go back.</p>
+                   <% }%> 
+
+        <%} else {%>    
         <p>Fields are not filled in.</p>
         <p>Click <a href="register.jsp">here</a> to go back.</p>
+        <% } %>
         <% } catch (Exception e) {%>
-        <p>Exception is : (<%= e.getMessage()%> <% ; %>)</p>
+        <p>Exception is : PATTY(<%= e.getMessage()%> <% ; %>)</p>
         <p>Click <a href="register.jsp">here</a> to go back.</p>
         <% System.out.println(e.getMessage());
-            }}%>
+            }%>
+
+        <%}%>
+
     </body>
 </html>

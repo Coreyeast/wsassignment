@@ -6,6 +6,7 @@
     
     <xs:simpleType name="title">
         <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{1}[a-z]* ([A-Z]{1}[a-z]*)"/>
         </xs:restriction>
     </xs:simpleType>
     
@@ -20,7 +21,7 @@
             <xs:pattern value="\d*" />
         </xs:restriction>
     </xs:simpleType>
-    
+    <!--  INSERT DECLARATIONS HERE -->
        <xs:element name="books">
               <xs:complexType>
                      <xs:sequence>

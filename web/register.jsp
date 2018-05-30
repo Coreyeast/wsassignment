@@ -46,6 +46,10 @@
                         <td> <input name="password" type="password" value</td>
                     </tr>
                     <tr>
+                        <td><label for="DOB">Date of Birth</label></td> 
+                        <td> <input name="DOB" type="date" value</td>
+                    </tr>
+                    <tr>
                         <td><label for="tos">Agree to TOS</label></td>
                         <td><input name="tos" type="checkbox" value></td>
                     </tr>

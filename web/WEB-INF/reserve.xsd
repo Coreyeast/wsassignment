@@ -4,15 +4,36 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-
 <xs:schema version="1.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            elementFormDefault="qualified">
+    
+    <xs:simpleType name="email">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="\w+([-+.^_]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="name">
+        <xs:restriction base="xs:string">
+        </xs:restriction>
+    </xs:simpleType>
 
+
+    
     <xs:element name="reservations">
         <xs:complexType>
             <xs:sequence>
-                
+                <xs:element name="reservation" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="email" type="email"/>
+                            <xs:element name="name" type="name"/>
+                            <xs:element name="id" type="xs:integer"/>
+                            <xs:element name="title" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

@@ -39,12 +39,12 @@ public class Users implements Serializable {
         return null; // Login incorrect. Return null.
     }
     
-    public User checkEmail(String email) {
+    public boolean checkEmail(String email) {
         for (User user : list) {
             if (user.getEmail().equals(email)) {
-                return user;
+                return false;
             }
         }
-        return null;
+        return true;
     }
 }

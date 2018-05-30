@@ -4,25 +4,33 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<users>
+
+ <!--xmlns="http://www.uts.edu.au/31284/wsd-diary"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-diary users.xsd"-->
+ <users>
     <user>
         <email>pplenge15@hotmail.com</email>
         <name>Pat</name>
-        <password>123</password>  
+        <password>123</password>
+        <DOB>12/01/1998</DOB>  
     </user>
     <user>
         <email>joe@bloggs.com</email>
         <name>Joe</name>
         <password>foobar</password>
+        <DOB>12/01/1998</DOB>  
     </user>
     <user>
         <email>coreyeast@gmail.com</email>
         <name>Corey</name>
         <password>lmao</password>
+        <DOB>12/01/1998</DOB>  
     </user>
     <user>
         <email>patt.stacked@gmail.com</email>
         <name>Pot</name>
         <password>321</password>
+        <DOB>12/01/1998</DOB>  
     </user>
 </users>
