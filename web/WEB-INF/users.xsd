@@ -19,6 +19,19 @@ and open the template in the editor.
     
     <xs:simpleType name="name">
         <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{1}[a-z]* ([A-Z]{1}[a-z]*)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="password">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="DOB">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$"/>
         </xs:restriction>
     </xs:simpleType>
     
@@ -32,8 +45,8 @@ and open the template in the editor.
                         <xs:sequence>
                             <xs:element name="email" type="email"/>
                             <xs:element name="name" type="name"/>
-                            <xs:element name="password" type="xs:string"/>
-                            <xs:element name="DOB" type="xs:date"/>
+                            <xs:element name="password" type="password"/>
+                            <xs:element name="DOB" type="DOB"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
