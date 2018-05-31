@@ -8,7 +8,7 @@ and open the template in the editor.
  <!--xmlns="http://www.uts.edu.au/31284/wsd-diary"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-diary users.xsd"-->
- <users>
+ <users>z
     <user>
         <email>pplenge15@hotmail.com</email>
         <name>Pat</name>
