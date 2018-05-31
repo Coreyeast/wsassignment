@@ -2,6 +2,8 @@
 
 <xs:schema version="1.0"
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://www.w3schools.com"
+           xmlns="https://www.w3schools.com"
            elementFormDefault="qualified">
     
     <xs:simpleType name="title">
