@@ -16,10 +16,19 @@ and open the template in the editor.
     
     <xs:simpleType name="name">
         <xs:restriction base="xs:string">
+            <xs:pattern value="[A-Z]{1}[a-z]* ([A-Z]{1}[a-z]*)"/>
         </xs:restriction>
     </xs:simpleType>
-
-
+    
+    <xs:simpleType name="title">
+        <xs:restriction base="xs:string">
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="id">
+        <xs:restriction base="xs:integer">
+        </xs:restriction>
+    </xs:simpleType>
     
     <xs:element name="reservations">
         <xs:complexType>
@@ -29,8 +38,8 @@ and open the template in the editor.
                         <xs:sequence>
                             <xs:element name="email" type="email"/>
                             <xs:element name="name" type="name"/>
-                            <xs:element name="id" type="xs:integer"/>
-                            <xs:element name="title" type="xs:string"/>
+                            <xs:element name="id" type="id"/>
+                            <xs:element name="title" type="title"/>
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>

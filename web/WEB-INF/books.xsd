@@ -21,6 +21,7 @@
             <xs:pattern value="\d*" />
         </xs:restriction>
     </xs:simpleType>
+    
     <!--  INSERT DECLARATIONS HERE -->
        <xs:element name="books">
               <xs:complexType>
