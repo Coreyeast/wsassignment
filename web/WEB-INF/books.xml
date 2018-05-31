@@ -5,7 +5,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
 <?xml-stylesheet type="text/xsl" href="books.xsl"?>
 
-<books>
+<books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="books.xsd">
     <book>
         <id>0</id>
         <title>Gone</title>

@@ -6,12 +6,14 @@
     
     <xs:simpleType name="title">
         <xs:restriction base="xs:string">
-            <xs:pattern value="[A-Z]{1}[a-z]* ([A-Z]{1}[a-z]*)"/>
+            <!-- ALPHANUMERIC NOT SPECIAL CHARS BUT ALLOWS A SPCAE-->
+            <xs:pattern value="[a-zA-Z0-9 ]+"/>
         </xs:restriction>
     </xs:simpleType>
     
         <xs:simpleType name="lister">
         <xs:restriction base="xs:string">
+            <!-- EMAIL REG EXPRES -->
             <xs:pattern value="\w+([-+.^_]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
         </xs:restriction>
     </xs:simpleType>
