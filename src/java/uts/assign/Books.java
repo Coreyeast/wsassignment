@@ -99,19 +99,4 @@ public class Books implements Serializable {
             
         }
     }
-
-   
-/**  FYI we haven't added the status feature yet
-
-    public ArrayList<Book> getBookStatus(String status) {
-        ArrayList<Book> statusBooks = new ArrayList<Book>();
-        for (Book book : list) {
-            if (book.getStatus().equalsIgnoreCase(status)){
-                statusBooks.add(book);
-            }
-        }
-        return statusBooks;
-    }
-**/
-
 }
