@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+ <!--xmlns="http://www.uts.edu.au/31284/wsd-diary"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.uts.edu.au/31284/wsd-diary users.xsd"-->
+ <users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="users.xsd">
+    <user>
+        <email>pplenge15@hotmail.com</email>
+        <name>Patrick Plenge</name>
+        <password>123</password>
+        <DOB>12/01/1998</DOB>  
+    </user>
+    <user>
+        <email>joe@bloggs.com</email>
+        <name>Joe Bloggs</name>
+        <password>foobar</password>
+        <DOB>12/01/1998</DOB>  
+    </user>
+    <user>
+        <email>coreyeast@gmail.com</email>
+        <name>Corey East</name>
+        <password>lmao</password>
+        <DOB>12/01/1998</DOB>  
+    </user>
+    <user>
+        <email>patt.stacked@gmail.com</email>
+        <name>Potrick Plonk</name>
+        <password>321</password>
+        <DOB>12/01/1998</DOB>  
+    </user>
+</users>

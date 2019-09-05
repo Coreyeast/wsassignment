@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+<books xmlns="https://www.w3schools.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
+<?xml-stylesheet type="text/xsl" href="books.xsl"?>
+
+<reservations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="reserve.xsd">
+    <reservation>
+        <email>reservation@example.com</email>
+        <name>Reservation Name</name>
+        <id>-1</id>
+        <title>Reservation Title</title>
+    </reservation>
+</reservations>

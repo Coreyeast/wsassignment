@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+<books xmlns="https://www.w3schools.com"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="https://www.w3schools.com books.xsd"> -->
+<?xml-stylesheet type="text/xsl" href="books.xsl"?>
+
+<books xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="books.xsd">
+    <book>
+        <id>0</id>
+        <title>Gone</title>
+        <author>Micheal grant</author>
+        <abstract>Kids from the town perdido beach get trapped inside a dome, all adults disappear.</abstract>
+        <pubInfo>Year: 2009 ISBN: 999210 Edition: First Edition</pubInfo>
+        <condition>Poor</condition>
+        <lister>patt.stacked@gmail.com</lister>
+        <status>Available</status>
+        <price>48</price>
+        <count>1 </count>
+    </book>
+    <book>
+        <id>1</id>
+        <title>Title of book</title>
+        <author>Author</author>
+        <abstract>Abstract</abstract>
+        <pubInfo>Public Info</pubInfo>
+        <condition>new</condition>
+        <lister>pplenge15@hotmail.com</lister>
+        <status>Available</status>
+        <price>38</price>
+        <count>1 </count>
+    </book>
+    <book>
+        <id>2</id>
+        <title>Harry Potter</title>
+        <author>J.K Rowling</author>
+        <abstract>Wizards fight against Voldemort</abstract>
+        <pubInfo>Year: 2001 ISBN: 0214909</pubInfo>
+        <condition>poor</condition>
+        <lister>joe@bloggs.com</lister>
+        <status>Available</status>
+        <price>33</price>
+        <count>1</count>
+    </book>
+    <book>
+        <id>3</id>
+        <title>Star Wars</title>
+        <author>George Lucas</author>
+        <abstract>The jedi fight the sith in this 9 book series!</abstract>
+        <pubInfo>Year: 1999 ISBN: 74790310</pubInfo>
+        <condition>poor</condition>
+        <lister>joe@bloggs.com</lister>
+        <status>Available</status>
+        <price>40</price>
+        <count>1</count>
+    </book>
+</books>

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+    
+    <xs:simpleType name="title">
+        <xs:restriction base="xs:string">
+            <!-- ALPHANUMERIC NOT SPECIAL CHARS BUT ALLOWS A SPCAE-->
+            <xs:pattern value="[a-zA-Z0-9 ]+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+        <xs:simpleType name="lister">
+        <xs:restriction base="xs:string">
+            <!-- EMAIL REG EXPRES -->
+            <xs:pattern value="\w+([-+.^_]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+            <xs:simpleType name="price">
+        <xs:restriction base="xs:integer">
+            <xs:pattern value="\d*" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <!--  INSERT DECLARATIONS HERE -->
+       <xs:element name="books">
+              <xs:complexType>
+                     <xs:sequence>
+                            <xs:element name="book" maxOccurs="unbounded">
+                                   <xs:complexType>
+                                          <xs:sequence>
+                                              <xs:element name="id" type="xs:integer"/>
+                                                 <xs:element name="title" type="title"/>
+                                                 <xs:element name="author" type = "xs:string"/>
+                                                 <xs:element name="abstract" type = "xs:string"/>
+                                                 <xs:element name="pubInfo" type = "xs:string"/>
+                                                 <xs:element name="condition" type = "xs:string"/>
+                                                 <xs:element name="lister" type = "lister"/>
+                                                 <xs:element name="status" type = "xs:string"/>
+                                                 <xs:element name="price" type = "price"/>
+                                                 <xs:element name="count" type = "xs:integer"/>
+                                             </xs:sequence>
+                                      </xs:complexType>
+                               </xs:element>
+                        </xs:sequence>
+                 </xs:complexType>
+          </xs:element>
+   </xs:schema>
